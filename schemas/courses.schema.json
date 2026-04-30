@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "required": [
+    "course_code",
+    "course_name",
+    "major_code",
+    "credits",
+    "source_file",
+    "needs_review"
+  ],
+  "properties": {
+    "course_code": {
+      "type": "string"
+    },
+    "course_name": {
+      "type": "string"
+    },
+    "major_code": {
+      "type": "string"
+    },
+    "module": {
+      "type": "string"
+    },
+    "course_type": {
+      "type": "string"
+    },
+    "credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "hours": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "lecture_hours": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "practice_hours": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "semester": {
+      "type": "string"
+    },
+    "assessment": {
+      "type": "string"
+    },
+    "remark": {
+      "type": "string"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "needs_review": {
+      "type": "boolean"
+    }
+  }
+}

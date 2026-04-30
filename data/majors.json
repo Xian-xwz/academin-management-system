@@ -1,0 +1,386 @@
+[
+  {
+    "major_code": "090601",
+    "major_name": "水产养殖学",
+    "major_category": "水产类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/水产养殖学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090602",
+    "major_name": "海洋渔业科学与技术",
+    "major_category": "水产类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/海洋渔业科学与技术/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090604TK",
+    "major_name": "水生动物医学",
+    "major_category": "水产类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/水生动物医学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "071001",
+    "major_name": "生物科学",
+    "major_category": "生物科学类",
+    "degree": "理学学士",
+    "source_file": "knowledge/wiki/majors/生物科学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "070701",
+    "major_name": "海洋科学",
+    "major_category": "海洋科学类",
+    "degree": "理学学士",
+    "source_file": "knowledge/wiki/majors/海洋科学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "070601",
+    "major_name": "大气科学",
+    "major_category": "大气科学类",
+    "degree": "理学学士",
+    "source_file": "knowledge/wiki/majors/大气科学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "070602",
+    "major_name": "应用气象学",
+    "major_category": "大气科学类",
+    "degree": "理学学士",
+    "source_file": "knowledge/wiki/majors/应用气象学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "082701",
+    "major_name": "食品科学与工程",
+    "major_category": "食品科学与工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/食品科学与工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "082702",
+    "major_name": "食品质量与安全",
+    "major_category": "食品科学与工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/食品质量与安全/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "083001",
+    "major_name": "生物工程",
+    "major_category": "生物工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/生物工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090301",
+    "major_name": "动物科学",
+    "major_category": "动物生产类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/动物科学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090401",
+    "major_name": "动物医学",
+    "major_category": "动物医学类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/动物医学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090501",
+    "major_name": "林学",
+    "major_category": "林学类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/林学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090101",
+    "major_name": "农学",
+    "major_category": "植物生产类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/农学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "071002",
+    "major_name": "生物技术",
+    "major_category": "生物科学类 授予学位：理学学士",
+    "degree": "理学学士",
+    "source_file": "knowledge/wiki/majors/生物技术/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090502",
+    "major_name": "园林",
+    "major_category": "林学类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/园林/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "090102",
+    "major_name": "园艺",
+    "major_category": "植物生产类",
+    "degree": "农学学士",
+    "source_file": "knowledge/wiki/majors/园艺/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080202",
+    "major_name": "机械设计制造及其自动化",
+    "major_category": "机械类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/机械设计制造及其自动化/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080501",
+    "major_name": "能源与动力工程",
+    "major_category": "",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/能源与动力工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "081002",
+    "major_name": "建筑环境与能源应用工程",
+    "major_category": "土木类",
+    "degree": "工学学位",
+    "source_file": "knowledge/wiki/majors/建筑环境与能源应用工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080204",
+    "major_name": "机械电子工程",
+    "major_category": "机械类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/机械电子工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080203",
+    "major_name": "材料成型及控制工程",
+    "major_category": "机械类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/材料成型及控制工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120701",
+    "major_name": "工业工程",
+    "major_category": "工业工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/工业工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080205",
+    "major_name": "工业设计",
+    "major_category": "机械类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/工业设计/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "081901",
+    "major_name": "船舶与海洋工程",
+    "major_category": "海洋工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/船舶与海洋工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "081103",
+    "major_name": "港口航道与海岸工程",
+    "major_category": "水利类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/港口航道与海岸工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120103",
+    "major_name": "工程管理",
+    "major_category": "管理科学与工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/工程管理/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "020101",
+    "major_name": "经济学",
+    "major_category": "经济学类",
+    "degree": "经济学学士",
+    "source_file": "knowledge/wiki/majors/经济学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "020401",
+    "major_name": "国际经济与贸易",
+    "major_category": "经济与贸易类",
+    "degree": "经济学学士",
+    "source_file": "knowledge/wiki/majors/国际经济与贸易/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "020307T",
+    "major_name": "经济与金融",
+    "major_category": "金融学类",
+    "degree": "经济学学士",
+    "source_file": "knowledge/wiki/majors/经济与金融/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120201K",
+    "major_name": "工商管理",
+    "major_category": "工商管理类",
+    "degree": "管理学学士",
+    "source_file": "knowledge/wiki/majors/工商管理/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120204",
+    "major_name": "财务管理",
+    "major_category": "工商管理类",
+    "degree": "管理学学士",
+    "source_file": "knowledge/wiki/majors/财务管理/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120203K",
+    "major_name": "会计学",
+    "major_category": "工商管理类",
+    "degree": "管理学学士",
+    "source_file": "knowledge/wiki/majors/会计学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120402",
+    "major_name": "行政管理",
+    "major_category": "公共管理类",
+    "degree": "管理学学士",
+    "source_file": "knowledge/wiki/majors/行政管理/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120901K",
+    "major_name": "旅游管理",
+    "major_category": "旅游管理类",
+    "degree": "管理学学士",
+    "source_file": "knowledge/wiki/majors/旅游管理/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120404",
+    "major_name": "土地资源管理",
+    "major_category": "公共管理类",
+    "degree": "管理学学士",
+    "source_file": "knowledge/wiki/majors/土地资源管理/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080901",
+    "major_name": "计算机科学与技术",
+    "major_category": "计算机类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/计算机科学与技术/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080902",
+    "major_name": "软件工程",
+    "major_category": "计算机类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/软件工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "070102",
+    "major_name": "信息与计算科学",
+    "major_category": "数学类",
+    "degree": "理学学位",
+    "source_file": "knowledge/wiki/majors/信息与计算科学/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080905",
+    "major_name": "物联网工程",
+    "major_category": "计算机类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/物联网工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "120102",
+    "major_name": "信息管理与信息系统",
+    "major_category": "管理科学与工程类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/信息管理与信息系统/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080910T",
+    "major_name": "数据科学与大数据技术",
+    "major_category": "计算机类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/数据科学与大数据技术/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080701",
+    "major_name": "电子信息工程",
+    "major_category": "电子信息类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/电子信息工程/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "070702",
+    "major_name": "海洋技术",
+    "major_category": "海洋科学类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/海洋技术/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080702",
+    "major_name": "电子科学与技术",
+    "major_category": "电子信息类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/电子科学与技术/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080601",
+    "major_name": "电气工程及其自动化",
+    "major_category": "电气类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/电气工程及其自动化/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "80801",
+    "major_name": "自动化",
+    "major_category": "自动化类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/自动化/README.md",
+    "needs_review": false
+  },
+  {
+    "major_code": "080703",
+    "major_name": "通信工程",
+    "major_category": "电子信息类",
+    "degree": "工学学士",
+    "source_file": "knowledge/wiki/majors/通信工程/README.md",
+    "needs_review": false
+  }
+]

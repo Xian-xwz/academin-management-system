@@ -1,0 +1,231 @@
+{
+  "source_root": "D:\\study\\case\\毕业设计\\docs\\人才培养方案",
+  "source_count": 4,
+  "generated_at": "2026-04-26T22:37:10",
+  "sources": [
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-6d25641a-691b-4c22-8204-ce8bd1c86cd3\\full.md",
+      "first_page": 1,
+      "sha256": "de1c7f7eca86af6655ff4bcf989af14f5adf86e6e309f5840519c7047bc39475",
+      "mtime": "2026-04-25T17:45:20",
+      "majors": [
+        {
+          "major_name": "水产养殖学",
+          "line": 343
+        },
+        {
+          "major_name": "海洋渔业科学与技术",
+          "line": 585
+        },
+        {
+          "major_name": "水生动物医学",
+          "line": 778
+        },
+        {
+          "major_name": "生物科学",
+          "line": 984
+        },
+        {
+          "major_name": "海洋科学",
+          "line": 1221
+        },
+        {
+          "major_name": "大气科学",
+          "line": 1439
+        },
+        {
+          "major_name": "应用气象学",
+          "line": 1669
+        },
+        {
+          "major_name": "食品科学与工程",
+          "line": 1875
+        },
+        {
+          "major_name": "食品质量与安全",
+          "line": 2144
+        },
+        {
+          "major_name": "生物工程",
+          "line": 2371
+        },
+        {
+          "major_name": "动物科学",
+          "line": 2587
+        }
+      ]
+    },
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-6c51845c-3662-42be-8817-b91e6fcaf49b\\full.md",
+      "first_page": 187,
+      "sha256": "79b961c1f5e08b943cf8264c468b0d9c9a754a4f0622213a54d12fa1e2797273",
+      "mtime": "2026-04-25T17:45:25",
+      "majors": [
+        {
+          "major_name": "动物医学",
+          "line": 20
+        },
+        {
+          "major_name": "林学",
+          "line": 204
+        },
+        {
+          "major_name": "农学",
+          "line": 423
+        },
+        {
+          "major_name": "生物技术",
+          "line": 617
+        },
+        {
+          "major_name": "园林",
+          "line": 768
+        },
+        {
+          "major_name": "园艺",
+          "line": 964
+        },
+        {
+          "major_name": "机械设计制造及其自动化",
+          "line": 1110
+        },
+        {
+          "major_name": "能源与动力工程",
+          "line": 1352
+        },
+        {
+          "major_name": "建筑环境与能源应用工程",
+          "line": 1610
+        },
+        {
+          "major_name": "机械电子工程",
+          "line": 1878
+        },
+        {
+          "major_name": "材料成型及控制工程",
+          "line": 2123
+        },
+        {
+          "major_name": "工业工程",
+          "line": 2383
+        },
+        {
+          "major_name": "工业设计",
+          "line": 2664
+        }
+      ]
+    },
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-0420665b-7264-4690-93ae-f2bfeabd9a9f\\full.md",
+      "first_page": 387,
+      "sha256": "cc505fc718b16c592792209fb78862ddb1a7e9862a5e957874a64ed3c5f52cda",
+      "mtime": "2026-04-25T17:45:52",
+      "majors": [
+        {
+          "major_name": "船舶与海洋工程",
+          "line": 115
+        },
+        {
+          "major_name": "港口航道与海岸工程",
+          "line": 381
+        },
+        {
+          "major_name": "工程管理",
+          "line": 637
+        },
+        {
+          "major_name": "经济学",
+          "line": 828
+        },
+        {
+          "major_name": "国际经济与贸易",
+          "line": 1040
+        },
+        {
+          "major_name": "经济与金融",
+          "line": 1229
+        },
+        {
+          "major_name": "工商管理",
+          "line": 1367
+        },
+        {
+          "major_name": "财务管理",
+          "line": 1523
+        },
+        {
+          "major_name": "会计学",
+          "line": 1680
+        },
+        {
+          "major_name": "行政管理",
+          "line": 1833
+        },
+        {
+          "major_name": "旅游管理",
+          "line": 2003
+        },
+        {
+          "major_name": "土地资源管理",
+          "line": 2201
+        },
+        {
+          "major_name": "计算机科学与技术",
+          "line": 2371
+        },
+        {
+          "major_name": "软件工程",
+          "line": 2588
+        }
+      ]
+    },
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-215ec236-c6ae-4230-a1d3-124820b75512\\full.md",
+      "first_page": 587,
+      "sha256": "405262eb71ac2b51a21083b735222c5216d8bb66e990809f82d2f4169cb537fc",
+      "mtime": "2026-04-25T17:45:27",
+      "majors": [
+        {
+          "major_name": "信息与计算科学",
+          "line": 100
+        },
+        {
+          "major_name": "物联网工程",
+          "line": 310
+        },
+        {
+          "major_name": "信息管理与信息系统",
+          "line": 539
+        },
+        {
+          "major_name": "数据科学与大数据技术",
+          "line": 780
+        },
+        {
+          "major_name": "电子信息工程",
+          "line": 995
+        },
+        {
+          "major_name": "海洋技术",
+          "line": 1279
+        },
+        {
+          "major_name": "电子科学与技术",
+          "line": 1528
+        },
+        {
+          "major_name": "电气工程及其自动化",
+          "line": 1739
+        },
+        {
+          "major_name": "自动化",
+          "line": 1999
+        },
+        {
+          "major_name": "通信工程",
+          "line": 2258
+        }
+      ]
+    }
+  ]
+}

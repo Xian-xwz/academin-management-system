@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "required": [
+    "major_code",
+    "major_name",
+    "total_credits",
+    "source_file",
+    "needs_review"
+  ],
+  "properties": {
+    "major_code": {
+      "type": "string"
+    },
+    "major_name": {
+      "type": "string"
+    },
+    "total_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "theory_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "practice_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "general_required_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "general_elective_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "major_basic_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "major_required_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "major_limited_elective_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "major_optional_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "needs_review": {
+      "type": "boolean"
+    }
+  }
+}

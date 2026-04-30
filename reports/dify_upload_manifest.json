@@ -1,0 +1,2207 @@
+[
+  {
+    "file": "knowledge\\dify_upload\\会计学_00_专业总览.md",
+    "size_bytes": 3695,
+    "size_kb": 3.61,
+    "major_name": "会计学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\会计学_01_毕业要求与学分结构.md",
+    "size_bytes": 1553,
+    "size_kb": 1.52,
+    "major_name": "会计学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\会计学_02_课程设置.md",
+    "size_bytes": 6162,
+    "size_kb": 6.02,
+    "major_name": "会计学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\会计学_03_实践教学.md",
+    "size_bytes": 1489,
+    "size_kb": 1.45,
+    "major_name": "会计学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\会计学_04_课程体系矩阵.md",
+    "size_bytes": 6949,
+    "size_kb": 6.79,
+    "major_name": "会计学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息与计算科学_00_专业总览.md",
+    "size_bytes": 9627,
+    "size_kb": 9.4,
+    "major_name": "信息与计算科学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息与计算科学_01_毕业要求与学分结构.md",
+    "size_bytes": 1566,
+    "size_kb": 1.53,
+    "major_name": "信息与计算科学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息与计算科学_02_课程设置.md",
+    "size_bytes": 5498,
+    "size_kb": 5.37,
+    "major_name": "信息与计算科学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息与计算科学_03_实践教学.md",
+    "size_bytes": 2031,
+    "size_kb": 1.98,
+    "major_name": "信息与计算科学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息与计算科学_04_课程体系矩阵.md",
+    "size_bytes": 3403,
+    "size_kb": 3.32,
+    "major_name": "信息与计算科学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息管理与信息系统_00_专业总览.md",
+    "size_bytes": 10719,
+    "size_kb": 10.47,
+    "major_name": "信息管理与信息系统",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息管理与信息系统_01_毕业要求与学分结构.md",
+    "size_bytes": 1603,
+    "size_kb": 1.57,
+    "major_name": "信息管理与信息系统",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息管理与信息系统_02_课程设置.md",
+    "size_bytes": 6457,
+    "size_kb": 6.31,
+    "major_name": "信息管理与信息系统",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息管理与信息系统_03_实践教学.md",
+    "size_bytes": 1894,
+    "size_kb": 1.85,
+    "major_name": "信息管理与信息系统",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\信息管理与信息系统_04_课程体系矩阵.md",
+    "size_bytes": 3572,
+    "size_kb": 3.49,
+    "major_name": "信息管理与信息系统",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\农学_00_专业总览.md",
+    "size_bytes": 7283,
+    "size_kb": 7.11,
+    "major_name": "农学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\农学_01_毕业要求与学分结构.md",
+    "size_bytes": 1548,
+    "size_kb": 1.51,
+    "major_name": "农学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\农学_02_课程设置.md",
+    "size_bytes": 7734,
+    "size_kb": 7.55,
+    "major_name": "农学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\农学_03_实践教学.md",
+    "size_bytes": 2582,
+    "size_kb": 2.52,
+    "major_name": "农学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\农学_04_课程体系矩阵.md",
+    "size_bytes": 7060,
+    "size_kb": 6.89,
+    "major_name": "农学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物医学_00_专业总览.md",
+    "size_bytes": 4084,
+    "size_kb": 3.99,
+    "major_name": "动物医学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物医学_01_毕业要求与学分结构.md",
+    "size_bytes": 1567,
+    "size_kb": 1.53,
+    "major_name": "动物医学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物医学_02_课程设置.md",
+    "size_bytes": 7117,
+    "size_kb": 6.95,
+    "major_name": "动物医学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物医学_03_实践教学.md",
+    "size_bytes": 2778,
+    "size_kb": 2.71,
+    "major_name": "动物医学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物医学_04_课程体系矩阵.md",
+    "size_bytes": 9280,
+    "size_kb": 9.06,
+    "major_name": "动物医学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物科学_00_专业总览.md",
+    "size_bytes": 5617,
+    "size_kb": 5.49,
+    "major_name": "动物科学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物科学_01_毕业要求与学分结构.md",
+    "size_bytes": 1569,
+    "size_kb": 1.53,
+    "major_name": "动物科学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物科学_02_课程设置.md",
+    "size_bytes": 8633,
+    "size_kb": 8.43,
+    "major_name": "动物科学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物科学_03_实践教学.md",
+    "size_bytes": 2474,
+    "size_kb": 2.42,
+    "major_name": "动物科学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\动物科学_04_课程体系矩阵.md",
+    "size_bytes": 7539,
+    "size_kb": 7.36,
+    "major_name": "动物科学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园林_00_专业总览.md",
+    "size_bytes": 5869,
+    "size_kb": 5.73,
+    "major_name": "园林",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园林_01_毕业要求与学分结构.md",
+    "size_bytes": 1538,
+    "size_kb": 1.5,
+    "major_name": "园林",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园林_02_课程设置.md",
+    "size_bytes": 7003,
+    "size_kb": 6.84,
+    "major_name": "园林",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园林_03_实践教学.md",
+    "size_bytes": 2646,
+    "size_kb": 2.58,
+    "major_name": "园林",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园林_04_课程体系矩阵.md",
+    "size_bytes": 6981,
+    "size_kb": 6.82,
+    "major_name": "园林",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园艺_00_专业总览.md",
+    "size_bytes": 5721,
+    "size_kb": 5.59,
+    "major_name": "园艺",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园艺_01_毕业要求与学分结构.md",
+    "size_bytes": 1557,
+    "size_kb": 1.52,
+    "major_name": "园艺",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园艺_02_课程设置.md",
+    "size_bytes": 8749,
+    "size_kb": 8.54,
+    "major_name": "园艺",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园艺_03_实践教学.md",
+    "size_bytes": 2468,
+    "size_kb": 2.41,
+    "major_name": "园艺",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\园艺_04_课程体系矩阵.md",
+    "size_bytes": 6894,
+    "size_kb": 6.73,
+    "major_name": "园艺",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\国际经济与贸易_00_专业总览.md",
+    "size_bytes": 5689,
+    "size_kb": 5.56,
+    "major_name": "国际经济与贸易",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\国际经济与贸易_01_毕业要求与学分结构.md",
+    "size_bytes": 1541,
+    "size_kb": 1.5,
+    "major_name": "国际经济与贸易",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\国际经济与贸易_02_课程设置.md",
+    "size_bytes": 6246,
+    "size_kb": 6.1,
+    "major_name": "国际经济与贸易",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\国际经济与贸易_03_实践教学.md",
+    "size_bytes": 1890,
+    "size_kb": 1.85,
+    "major_name": "国际经济与贸易",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\国际经济与贸易_04_课程体系矩阵.md",
+    "size_bytes": 7204,
+    "size_kb": 7.04,
+    "major_name": "国际经济与贸易",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\土地资源管理_00_专业总览.md",
+    "size_bytes": 6229,
+    "size_kb": 6.08,
+    "major_name": "土地资源管理",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\土地资源管理_01_毕业要求与学分结构.md",
+    "size_bytes": 1572,
+    "size_kb": 1.54,
+    "major_name": "土地资源管理",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\土地资源管理_02_课程设置.md",
+    "size_bytes": 7016,
+    "size_kb": 6.85,
+    "major_name": "土地资源管理",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\土地资源管理_03_实践教学.md",
+    "size_bytes": 2570,
+    "size_kb": 2.51,
+    "major_name": "土地资源管理",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\土地资源管理_04_课程体系矩阵.md",
+    "size_bytes": 7175,
+    "size_kb": 7.01,
+    "major_name": "土地资源管理",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\大气科学_00_专业总览.md",
+    "size_bytes": 8854,
+    "size_kb": 8.65,
+    "major_name": "大气科学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\大气科学_01_毕业要求与学分结构.md",
+    "size_bytes": 1541,
+    "size_kb": 1.5,
+    "major_name": "大气科学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\大气科学_02_课程设置.md",
+    "size_bytes": 6468,
+    "size_kb": 6.32,
+    "major_name": "大气科学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\大气科学_03_实践教学.md",
+    "size_bytes": 2414,
+    "size_kb": 2.36,
+    "major_name": "大气科学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\大气科学_04_课程体系矩阵.md",
+    "size_bytes": 8800,
+    "size_kb": 8.59,
+    "major_name": "大气科学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业工程_00_专业总览.md",
+    "size_bytes": 9627,
+    "size_kb": 9.4,
+    "major_name": "工业工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1522,
+    "size_kb": 1.49,
+    "major_name": "工业工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业工程_02_课程设置.md",
+    "size_bytes": 7032,
+    "size_kb": 6.87,
+    "major_name": "工业工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业工程_03_实践教学.md",
+    "size_bytes": 2278,
+    "size_kb": 2.22,
+    "major_name": "工业工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业工程_04_课程体系矩阵.md",
+    "size_bytes": 11916,
+    "size_kb": 11.64,
+    "major_name": "工业工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业设计_00_专业总览.md",
+    "size_bytes": 4113,
+    "size_kb": 4.02,
+    "major_name": "工业设计",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业设计_01_毕业要求与学分结构.md",
+    "size_bytes": 1553,
+    "size_kb": 1.52,
+    "major_name": "工业设计",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业设计_02_课程设置.md",
+    "size_bytes": 5902,
+    "size_kb": 5.76,
+    "major_name": "工业设计",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业设计_03_实践教学.md",
+    "size_bytes": 2001,
+    "size_kb": 1.95,
+    "major_name": "工业设计",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工业设计_04_课程体系矩阵.md",
+    "size_bytes": 6308,
+    "size_kb": 6.16,
+    "major_name": "工业设计",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工商管理_00_专业总览.md",
+    "size_bytes": 5071,
+    "size_kb": 4.95,
+    "major_name": "工商管理",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工商管理_01_毕业要求与学分结构.md",
+    "size_bytes": 1556,
+    "size_kb": 1.52,
+    "major_name": "工商管理",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工商管理_02_课程设置.md",
+    "size_bytes": 6057,
+    "size_kb": 5.92,
+    "major_name": "工商管理",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工商管理_03_实践教学.md",
+    "size_bytes": 1405,
+    "size_kb": 1.37,
+    "major_name": "工商管理",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工商管理_04_课程体系矩阵.md",
+    "size_bytes": 6447,
+    "size_kb": 6.3,
+    "major_name": "工商管理",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工程管理_00_专业总览.md",
+    "size_bytes": 4937,
+    "size_kb": 4.82,
+    "major_name": "工程管理",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工程管理_01_毕业要求与学分结构.md",
+    "size_bytes": 1569,
+    "size_kb": 1.53,
+    "major_name": "工程管理",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工程管理_02_课程设置.md",
+    "size_bytes": 8440,
+    "size_kb": 8.24,
+    "major_name": "工程管理",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工程管理_03_实践教学.md",
+    "size_bytes": 2340,
+    "size_kb": 2.29,
+    "major_name": "工程管理",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\工程管理_04_课程体系矩阵.md",
+    "size_bytes": 6341,
+    "size_kb": 6.19,
+    "major_name": "工程管理",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\广东海洋大学 2021 版本科_00_专业总览.md",
+    "size_bytes": 2291,
+    "size_kb": 2.24,
+    "major_name": "广东海洋大学 2021 版本科",
+    "doc_type": "",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\广东海洋大学 2021 版本科_01_毕业要求与学分结构.md",
+    "size_bytes": 776,
+    "size_kb": 0.76,
+    "major_name": "广东海洋大学 2021 版本科",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\广东海洋大学 2021 版本科_02_课程设置.md",
+    "size_bytes": 383,
+    "size_kb": 0.37,
+    "major_name": "广东海洋大学 2021 版本科",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\广东海洋大学 2021 版本科_03_实践教学.md",
+    "size_bytes": 389,
+    "size_kb": 0.38,
+    "major_name": "广东海洋大学 2021 版本科",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\广东海洋大学 2021 版本科_04_课程体系矩阵.md",
+    "size_bytes": 472,
+    "size_kb": 0.46,
+    "major_name": "广东海洋大学 2021 版本科",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\应用气象学_00_专业总览.md",
+    "size_bytes": 9244,
+    "size_kb": 9.03,
+    "major_name": "应用气象学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\应用气象学_01_毕业要求与学分结构.md",
+    "size_bytes": 1548,
+    "size_kb": 1.51,
+    "major_name": "应用气象学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\应用气象学_02_课程设置.md",
+    "size_bytes": 6164,
+    "size_kb": 6.02,
+    "major_name": "应用气象学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\应用气象学_03_实践教学.md",
+    "size_bytes": 2459,
+    "size_kb": 2.4,
+    "major_name": "应用气象学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\应用气象学_04_课程体系矩阵.md",
+    "size_bytes": 8873,
+    "size_kb": 8.67,
+    "major_name": "应用气象学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\建筑环境与能源应用工程_00_专业总览.md",
+    "size_bytes": 10692,
+    "size_kb": 10.44,
+    "major_name": "建筑环境与能源应用工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\建筑环境与能源应用工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1547,
+    "size_kb": 1.51,
+    "major_name": "建筑环境与能源应用工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\建筑环境与能源应用工程_02_课程设置.md",
+    "size_bytes": 7306,
+    "size_kb": 7.13,
+    "major_name": "建筑环境与能源应用工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\建筑环境与能源应用工程_03_实践教学.md",
+    "size_bytes": 2359,
+    "size_kb": 2.3,
+    "major_name": "建筑环境与能源应用工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\建筑环境与能源应用工程_04_课程体系矩阵.md",
+    "size_bytes": 11376,
+    "size_kb": 11.11,
+    "major_name": "建筑环境与能源应用工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\数据科学与大数据技术_00_专业总览.md",
+    "size_bytes": 9126,
+    "size_kb": 8.91,
+    "major_name": "数据科学与大数据技术",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\数据科学与大数据技术_01_毕业要求与学分结构.md",
+    "size_bytes": 1587,
+    "size_kb": 1.55,
+    "major_name": "数据科学与大数据技术",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\数据科学与大数据技术_02_课程设置.md",
+    "size_bytes": 6384,
+    "size_kb": 6.23,
+    "major_name": "数据科学与大数据技术",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\数据科学与大数据技术_03_实践教学.md",
+    "size_bytes": 1826,
+    "size_kb": 1.78,
+    "major_name": "数据科学与大数据技术",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\数据科学与大数据技术_04_课程体系矩阵.md",
+    "size_bytes": 3998,
+    "size_kb": 3.9,
+    "major_name": "数据科学与大数据技术",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\旅游管理_00_专业总览.md",
+    "size_bytes": 6952,
+    "size_kb": 6.79,
+    "major_name": "旅游管理",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\旅游管理_01_毕业要求与学分结构.md",
+    "size_bytes": 1517,
+    "size_kb": 1.48,
+    "major_name": "旅游管理",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\旅游管理_02_课程设置.md",
+    "size_bytes": 6370,
+    "size_kb": 6.22,
+    "major_name": "旅游管理",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\旅游管理_03_实践教学.md",
+    "size_bytes": 1609,
+    "size_kb": 1.57,
+    "major_name": "旅游管理",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\旅游管理_04_课程体系矩阵.md",
+    "size_bytes": 7632,
+    "size_kb": 7.45,
+    "major_name": "旅游管理",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械电子工程_00_专业总览.md",
+    "size_bytes": 8445,
+    "size_kb": 8.25,
+    "major_name": "机械电子工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械电子工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1556,
+    "size_kb": 1.52,
+    "major_name": "机械电子工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械电子工程_02_课程设置.md",
+    "size_bytes": 8266,
+    "size_kb": 8.07,
+    "major_name": "机械电子工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械电子工程_03_实践教学.md",
+    "size_bytes": 2103,
+    "size_kb": 2.05,
+    "major_name": "机械电子工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械电子工程_04_课程体系矩阵.md",
+    "size_bytes": 3159,
+    "size_kb": 3.08,
+    "major_name": "机械电子工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械设计制造及其自动化_00_专业总览.md",
+    "size_bytes": 9319,
+    "size_kb": 9.1,
+    "major_name": "机械设计制造及其自动化",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械设计制造及其自动化_01_毕业要求与学分结构.md",
+    "size_bytes": 1592,
+    "size_kb": 1.55,
+    "major_name": "机械设计制造及其自动化",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械设计制造及其自动化_02_课程设置.md",
+    "size_bytes": 7687,
+    "size_kb": 7.51,
+    "major_name": "机械设计制造及其自动化",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械设计制造及其自动化_03_实践教学.md",
+    "size_bytes": 2052,
+    "size_kb": 2.0,
+    "major_name": "机械设计制造及其自动化",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\机械设计制造及其自动化_04_课程体系矩阵.md",
+    "size_bytes": 9251,
+    "size_kb": 9.03,
+    "major_name": "机械设计制造及其自动化",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\材料成型及控制工程_00_专业总览.md",
+    "size_bytes": 11611,
+    "size_kb": 11.34,
+    "major_name": "材料成型及控制工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\材料成型及控制工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1600,
+    "size_kb": 1.56,
+    "major_name": "材料成型及控制工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\材料成型及控制工程_02_课程设置.md",
+    "size_bytes": 8237,
+    "size_kb": 8.04,
+    "major_name": "材料成型及控制工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\材料成型及控制工程_03_实践教学.md",
+    "size_bytes": 2092,
+    "size_kb": 2.04,
+    "major_name": "材料成型及控制工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\材料成型及控制工程_04_课程体系矩阵.md",
+    "size_bytes": 3607,
+    "size_kb": 3.52,
+    "major_name": "材料成型及控制工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\林学_00_专业总览.md",
+    "size_bytes": 7455,
+    "size_kb": 7.28,
+    "major_name": "林学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\林学_01_毕业要求与学分结构.md",
+    "size_bytes": 1549,
+    "size_kb": 1.51,
+    "major_name": "林学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\林学_02_课程设置.md",
+    "size_bytes": 6740,
+    "size_kb": 6.58,
+    "major_name": "林学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\林学_03_实践教学.md",
+    "size_bytes": 2653,
+    "size_kb": 2.59,
+    "major_name": "林学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\林学_04_课程体系矩阵.md",
+    "size_bytes": 9549,
+    "size_kb": 9.33,
+    "major_name": "林学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水产养殖学_00_专业总览.md",
+    "size_bytes": 11160,
+    "size_kb": 10.9,
+    "major_name": "水产养殖学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水产养殖学_01_毕业要求与学分结构.md",
+    "size_bytes": 1548,
+    "size_kb": 1.51,
+    "major_name": "水产养殖学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水产养殖学_02_课程设置.md",
+    "size_bytes": 9884,
+    "size_kb": 9.65,
+    "major_name": "水产养殖学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水产养殖学_03_实践教学.md",
+    "size_bytes": 1321,
+    "size_kb": 1.29,
+    "major_name": "水产养殖学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水产养殖学_04_课程体系矩阵.md",
+    "size_bytes": 11078,
+    "size_kb": 10.82,
+    "major_name": "水产养殖学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水生动物医学_00_专业总览.md",
+    "size_bytes": 9309,
+    "size_kb": 9.09,
+    "major_name": "水生动物医学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水生动物医学_01_毕业要求与学分结构.md",
+    "size_bytes": 1568,
+    "size_kb": 1.53,
+    "major_name": "水生动物医学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水生动物医学_02_课程设置.md",
+    "size_bytes": 8703,
+    "size_kb": 8.5,
+    "major_name": "水生动物医学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水生动物医学_03_实践教学.md",
+    "size_bytes": 1456,
+    "size_kb": 1.42,
+    "major_name": "水生动物医学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\水生动物医学_04_课程体系矩阵.md",
+    "size_bytes": 9485,
+    "size_kb": 9.26,
+    "major_name": "水生动物医学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋技术_00_专业总览.md",
+    "size_bytes": 9097,
+    "size_kb": 8.88,
+    "major_name": "海洋技术",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋技术_01_毕业要求与学分结构.md",
+    "size_bytes": 1623,
+    "size_kb": 1.58,
+    "major_name": "海洋技术",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋技术_02_课程设置.md",
+    "size_bytes": 6950,
+    "size_kb": 6.79,
+    "major_name": "海洋技术",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋技术_03_实践教学.md",
+    "size_bytes": 3508,
+    "size_kb": 3.43,
+    "major_name": "海洋技术",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋技术_04_课程体系矩阵.md",
+    "size_bytes": 9989,
+    "size_kb": 9.75,
+    "major_name": "海洋技术",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋渔业科学与技术_00_专业总览.md",
+    "size_bytes": 6583,
+    "size_kb": 6.43,
+    "major_name": "海洋渔业科学与技术",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋渔业科学与技术_01_毕业要求与学分结构.md",
+    "size_bytes": 1600,
+    "size_kb": 1.56,
+    "major_name": "海洋渔业科学与技术",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋渔业科学与技术_02_课程设置.md",
+    "size_bytes": 7345,
+    "size_kb": 7.17,
+    "major_name": "海洋渔业科学与技术",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋渔业科学与技术_03_实践教学.md",
+    "size_bytes": 2242,
+    "size_kb": 2.19,
+    "major_name": "海洋渔业科学与技术",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋渔业科学与技术_04_课程体系矩阵.md",
+    "size_bytes": 7462,
+    "size_kb": 7.29,
+    "major_name": "海洋渔业科学与技术",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋科学_00_专业总览.md",
+    "size_bytes": 8703,
+    "size_kb": 8.5,
+    "major_name": "海洋科学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋科学_01_毕业要求与学分结构.md",
+    "size_bytes": 1544,
+    "size_kb": 1.51,
+    "major_name": "海洋科学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋科学_02_课程设置.md",
+    "size_bytes": 9692,
+    "size_kb": 9.46,
+    "major_name": "海洋科学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋科学_03_实践教学.md",
+    "size_bytes": 3095,
+    "size_kb": 3.02,
+    "major_name": "海洋科学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\海洋科学_04_课程体系矩阵.md",
+    "size_bytes": 10585,
+    "size_kb": 10.34,
+    "major_name": "海洋科学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\港口航道与海岸工程_00_专业总览.md",
+    "size_bytes": 12197,
+    "size_kb": 11.91,
+    "major_name": "港口航道与海岸工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\港口航道与海岸工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1557,
+    "size_kb": 1.52,
+    "major_name": "港口航道与海岸工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\港口航道与海岸工程_02_课程设置.md",
+    "size_bytes": 8090,
+    "size_kb": 7.9,
+    "major_name": "港口航道与海岸工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\港口航道与海岸工程_03_实践教学.md",
+    "size_bytes": 2468,
+    "size_kb": 2.41,
+    "major_name": "港口航道与海岸工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\港口航道与海岸工程_04_课程体系矩阵.md",
+    "size_bytes": 11449,
+    "size_kb": 11.18,
+    "major_name": "港口航道与海岸工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\物联网工程_00_专业总览.md",
+    "size_bytes": 9442,
+    "size_kb": 9.22,
+    "major_name": "物联网工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\物联网工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1563,
+    "size_kb": 1.53,
+    "major_name": "物联网工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\物联网工程_02_课程设置.md",
+    "size_bytes": 6880,
+    "size_kb": 6.72,
+    "major_name": "物联网工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\物联网工程_03_实践教学.md",
+    "size_bytes": 1798,
+    "size_kb": 1.76,
+    "major_name": "物联网工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\物联网工程_04_课程体系矩阵.md",
+    "size_bytes": 3693,
+    "size_kb": 3.61,
+    "major_name": "物联网工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物工程_00_专业总览.md",
+    "size_bytes": 9823,
+    "size_kb": 9.59,
+    "major_name": "生物工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1543,
+    "size_kb": 1.51,
+    "major_name": "生物工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物工程_02_课程设置.md",
+    "size_bytes": 8413,
+    "size_kb": 8.22,
+    "major_name": "生物工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物工程_03_实践教学.md",
+    "size_bytes": 1912,
+    "size_kb": 1.87,
+    "major_name": "生物工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物工程_04_课程体系矩阵.md",
+    "size_bytes": 3846,
+    "size_kb": 3.76,
+    "major_name": "生物工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物技术_00_专业总览.md",
+    "size_bytes": 3575,
+    "size_kb": 3.49,
+    "major_name": "生物技术",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物技术_01_毕业要求与学分结构.md",
+    "size_bytes": 1593,
+    "size_kb": 1.56,
+    "major_name": "生物技术",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物技术_02_课程设置.md",
+    "size_bytes": 6878,
+    "size_kb": 6.72,
+    "major_name": "生物技术",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物技术_03_实践教学.md",
+    "size_bytes": 2340,
+    "size_kb": 2.29,
+    "major_name": "生物技术",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物技术_04_课程体系矩阵.md",
+    "size_bytes": 6929,
+    "size_kb": 6.77,
+    "major_name": "生物技术",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物科学_00_专业总览.md",
+    "size_bytes": 7721,
+    "size_kb": 7.54,
+    "major_name": "生物科学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物科学_01_毕业要求与学分结构.md",
+    "size_bytes": 1561,
+    "size_kb": 1.52,
+    "major_name": "生物科学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物科学_02_课程设置.md",
+    "size_bytes": 8128,
+    "size_kb": 7.94,
+    "major_name": "生物科学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物科学_03_实践教学.md",
+    "size_bytes": 1203,
+    "size_kb": 1.17,
+    "major_name": "生物科学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\生物科学_04_课程体系矩阵.md",
+    "size_bytes": 6527,
+    "size_kb": 6.37,
+    "major_name": "生物科学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子信息工程_00_专业总览.md",
+    "size_bytes": 10901,
+    "size_kb": 10.65,
+    "major_name": "电子信息工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子信息工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1560,
+    "size_kb": 1.52,
+    "major_name": "电子信息工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子信息工程_02_课程设置.md",
+    "size_bytes": 7870,
+    "size_kb": 7.69,
+    "major_name": "电子信息工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子信息工程_03_实践教学.md",
+    "size_bytes": 2748,
+    "size_kb": 2.68,
+    "major_name": "电子信息工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子信息工程_04_课程体系矩阵.md",
+    "size_bytes": 7201,
+    "size_kb": 7.03,
+    "major_name": "电子信息工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子科学与技术_00_专业总览.md",
+    "size_bytes": 10390,
+    "size_kb": 10.15,
+    "major_name": "电子科学与技术",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子科学与技术_01_毕业要求与学分结构.md",
+    "size_bytes": 1581,
+    "size_kb": 1.54,
+    "major_name": "电子科学与技术",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子科学与技术_02_课程设置.md",
+    "size_bytes": 6386,
+    "size_kb": 6.24,
+    "major_name": "电子科学与技术",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子科学与技术_03_实践教学.md",
+    "size_bytes": 1748,
+    "size_kb": 1.71,
+    "major_name": "电子科学与技术",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电子科学与技术_04_课程体系矩阵.md",
+    "size_bytes": 3269,
+    "size_kb": 3.19,
+    "major_name": "电子科学与技术",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电气工程及其自动化_00_专业总览.md",
+    "size_bytes": 8992,
+    "size_kb": 8.78,
+    "major_name": "电气工程及其自动化",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电气工程及其自动化_01_毕业要求与学分结构.md",
+    "size_bytes": 1571,
+    "size_kb": 1.53,
+    "major_name": "电气工程及其自动化",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电气工程及其自动化_02_课程设置.md",
+    "size_bytes": 6256,
+    "size_kb": 6.11,
+    "major_name": "电气工程及其自动化",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电气工程及其自动化_03_实践教学.md",
+    "size_bytes": 2338,
+    "size_kb": 2.28,
+    "major_name": "电气工程及其自动化",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\电气工程及其自动化_04_课程体系矩阵.md",
+    "size_bytes": 7756,
+    "size_kb": 7.57,
+    "major_name": "电气工程及其自动化",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济与金融_00_专业总览.md",
+    "size_bytes": 4369,
+    "size_kb": 4.27,
+    "major_name": "经济与金融",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济与金融_01_毕业要求与学分结构.md",
+    "size_bytes": 1544,
+    "size_kb": 1.51,
+    "major_name": "经济与金融",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济与金融_02_课程设置.md",
+    "size_bytes": 6305,
+    "size_kb": 6.16,
+    "major_name": "经济与金融",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济与金融_03_实践教学.md",
+    "size_bytes": 1881,
+    "size_kb": 1.84,
+    "major_name": "经济与金融",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济与金融_04_课程体系矩阵.md",
+    "size_bytes": 5483,
+    "size_kb": 5.35,
+    "major_name": "经济与金融",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济学_00_专业总览.md",
+    "size_bytes": 5786,
+    "size_kb": 5.65,
+    "major_name": "经济学",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济学_01_毕业要求与学分结构.md",
+    "size_bytes": 1553,
+    "size_kb": 1.52,
+    "major_name": "经济学",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济学_02_课程设置.md",
+    "size_bytes": 6115,
+    "size_kb": 5.97,
+    "major_name": "经济学",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济学_03_实践教学.md",
+    "size_bytes": 1829,
+    "size_kb": 1.79,
+    "major_name": "经济学",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\经济学_04_课程体系矩阵.md",
+    "size_bytes": 12452,
+    "size_kb": 12.16,
+    "major_name": "经济学",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\能源与动力工程_00_专业总览.md",
+    "size_bytes": 11780,
+    "size_kb": 11.5,
+    "major_name": "能源与动力工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\能源与动力工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1601,
+    "size_kb": 1.56,
+    "major_name": "能源与动力工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\能源与动力工程_02_课程设置.md",
+    "size_bytes": 8601,
+    "size_kb": 8.4,
+    "major_name": "能源与动力工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\能源与动力工程_03_实践教学.md",
+    "size_bytes": 2764,
+    "size_kb": 2.7,
+    "major_name": "能源与动力工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\能源与动力工程_04_课程体系矩阵.md",
+    "size_bytes": 3089,
+    "size_kb": 3.02,
+    "major_name": "能源与动力工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\自动化_00_专业总览.md",
+    "size_bytes": 10234,
+    "size_kb": 9.99,
+    "major_name": "自动化",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\自动化_01_毕业要求与学分结构.md",
+    "size_bytes": 1546,
+    "size_kb": 1.51,
+    "major_name": "自动化",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\自动化_02_课程设置.md",
+    "size_bytes": 6648,
+    "size_kb": 6.49,
+    "major_name": "自动化",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\自动化_03_实践教学.md",
+    "size_bytes": 2027,
+    "size_kb": 1.98,
+    "major_name": "自动化",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\自动化_04_课程体系矩阵.md",
+    "size_bytes": 9400,
+    "size_kb": 9.18,
+    "major_name": "自动化",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\船舶与海洋工程_00_专业总览.md",
+    "size_bytes": 9694,
+    "size_kb": 9.47,
+    "major_name": "船舶与海洋工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\船舶与海洋工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1583,
+    "size_kb": 1.55,
+    "major_name": "船舶与海洋工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\船舶与海洋工程_02_课程设置.md",
+    "size_bytes": 8320,
+    "size_kb": 8.12,
+    "major_name": "船舶与海洋工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\船舶与海洋工程_03_实践教学.md",
+    "size_bytes": 2191,
+    "size_kb": 2.14,
+    "major_name": "船舶与海洋工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\船舶与海洋工程_04_课程体系矩阵.md",
+    "size_bytes": 3683,
+    "size_kb": 3.6,
+    "major_name": "船舶与海洋工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\行政管理_00_专业总览.md",
+    "size_bytes": 2665,
+    "size_kb": 2.6,
+    "major_name": "行政管理",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\行政管理_01_毕业要求与学分结构.md",
+    "size_bytes": 1545,
+    "size_kb": 1.51,
+    "major_name": "行政管理",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\行政管理_02_课程设置.md",
+    "size_bytes": 6123,
+    "size_kb": 5.98,
+    "major_name": "行政管理",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\行政管理_03_实践教学.md",
+    "size_bytes": 1622,
+    "size_kb": 1.58,
+    "major_name": "行政管理",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\行政管理_04_课程体系矩阵.md",
+    "size_bytes": 5568,
+    "size_kb": 5.44,
+    "major_name": "行政管理",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\计算机科学与技术_00_专业总览.md",
+    "size_bytes": 8810,
+    "size_kb": 8.6,
+    "major_name": "计算机科学与技术",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\计算机科学与技术_01_毕业要求与学分结构.md",
+    "size_bytes": 1617,
+    "size_kb": 1.58,
+    "major_name": "计算机科学与技术",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\计算机科学与技术_02_课程设置.md",
+    "size_bytes": 8132,
+    "size_kb": 7.94,
+    "major_name": "计算机科学与技术",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\计算机科学与技术_03_实践教学.md",
+    "size_bytes": 2314,
+    "size_kb": 2.26,
+    "major_name": "计算机科学与技术",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\计算机科学与技术_04_课程体系矩阵.md",
+    "size_bytes": 10382,
+    "size_kb": 10.14,
+    "major_name": "计算机科学与技术",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\财务管理_00_专业总览.md",
+    "size_bytes": 4344,
+    "size_kb": 4.24,
+    "major_name": "财务管理",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\财务管理_01_毕业要求与学分结构.md",
+    "size_bytes": 1580,
+    "size_kb": 1.54,
+    "major_name": "财务管理",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\财务管理_02_课程设置.md",
+    "size_bytes": 5713,
+    "size_kb": 5.58,
+    "major_name": "财务管理",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\财务管理_03_实践教学.md",
+    "size_bytes": 2259,
+    "size_kb": 2.21,
+    "major_name": "财务管理",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\财务管理_04_课程体系矩阵.md",
+    "size_bytes": 6488,
+    "size_kb": 6.34,
+    "major_name": "财务管理",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\软件工程_00_专业总览.md",
+    "size_bytes": 8854,
+    "size_kb": 8.65,
+    "major_name": "软件工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\软件工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1614,
+    "size_kb": 1.58,
+    "major_name": "软件工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\软件工程_02_课程设置.md",
+    "size_bytes": 8182,
+    "size_kb": 7.99,
+    "major_name": "软件工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\软件工程_03_实践教学.md",
+    "size_bytes": 1982,
+    "size_kb": 1.94,
+    "major_name": "软件工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\软件工程_04_课程体系矩阵.md",
+    "size_bytes": 3742,
+    "size_kb": 3.65,
+    "major_name": "软件工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\通信工程_00_专业总览.md",
+    "size_bytes": 11246,
+    "size_kb": 10.98,
+    "major_name": "通信工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\通信工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1555,
+    "size_kb": 1.52,
+    "major_name": "通信工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\通信工程_02_课程设置.md",
+    "size_bytes": 7510,
+    "size_kb": 7.33,
+    "major_name": "通信工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\通信工程_03_实践教学.md",
+    "size_bytes": 2108,
+    "size_kb": 2.06,
+    "major_name": "通信工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\通信工程_04_课程体系矩阵.md",
+    "size_bytes": 7074,
+    "size_kb": 6.91,
+    "major_name": "通信工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品科学与工程_00_专业总览.md",
+    "size_bytes": 10484,
+    "size_kb": 10.24,
+    "major_name": "食品科学与工程",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品科学与工程_01_毕业要求与学分结构.md",
+    "size_bytes": 1590,
+    "size_kb": 1.55,
+    "major_name": "食品科学与工程",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品科学与工程_02_课程设置.md",
+    "size_bytes": 15304,
+    "size_kb": 14.95,
+    "major_name": "食品科学与工程",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品科学与工程_03_实践教学.md",
+    "size_bytes": 3730,
+    "size_kb": 3.64,
+    "major_name": "食品科学与工程",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品科学与工程_04_课程体系矩阵.md",
+    "size_bytes": 445,
+    "size_kb": 0.43,
+    "major_name": "食品科学与工程",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品质量与安全_00_专业总览.md",
+    "size_bytes": 11026,
+    "size_kb": 10.77,
+    "major_name": "食品质量与安全",
+    "doc_type": "00_专业总览",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品质量与安全_01_毕业要求与学分结构.md",
+    "size_bytes": 1570,
+    "size_kb": 1.53,
+    "major_name": "食品质量与安全",
+    "doc_type": "毕业要求与学分结构",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品质量与安全_02_课程设置.md",
+    "size_bytes": 8999,
+    "size_kb": 8.79,
+    "major_name": "食品质量与安全",
+    "doc_type": "课程设置",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品质量与安全_03_实践教学.md",
+    "size_bytes": 2047,
+    "size_kb": 2.0,
+    "major_name": "食品质量与安全",
+    "doc_type": "实践教学",
+    "under_200kb": true,
+    "needs_split": false
+  },
+  {
+    "file": "knowledge\\dify_upload\\食品质量与安全_04_课程体系矩阵.md",
+    "size_bytes": 3669,
+    "size_kb": 3.58,
+    "major_name": "食品质量与安全",
+    "doc_type": "课程体系矩阵",
+    "under_200kb": true,
+    "needs_split": false
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "run_at": "2026-04-26T22:37:12",
+  "source_root": "D:\\study\\case\\毕业设计\\docs\\人才培养方案",
+  "source_files": [
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-6d25641a-691b-4c22-8204-ce8bd1c86cd3\\full.md",
+      "first_page": 1,
+      "mtime": "2026-04-25T17:45:20",
+      "sha256": "de1c7f7eca86af6655ff4bcf989af14f5adf86e6e309f5840519c7047bc39475"
+    },
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-6c51845c-3662-42be-8817-b91e6fcaf49b\\full.md",
+      "first_page": 187,
+      "mtime": "2026-04-25T17:45:25",
+      "sha256": "79b961c1f5e08b943cf8264c468b0d9c9a754a4f0622213a54d12fa1e2797273"
+    },
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-0420665b-7264-4690-93ae-f2bfeabd9a9f\\full.md",
+      "first_page": 387,
+      "mtime": "2026-04-25T17:45:52",
+      "sha256": "cc505fc718b16c592792209fb78862ddb1a7e9862a5e957874a64ed3c5f52cda"
+    },
+    {
+      "path": "docs\\人才培养方案\\广东海洋大学2021版本科专业人才培养方案（上册）.pdf-215ec236-c6ae-4230-a1d3-124820b75512\\full.md",
+      "first_page": 587,
+      "mtime": "2026-04-25T17:45:27",
+      "sha256": "405262eb71ac2b51a21083b735222c5216d8bb66e990809f82d2f4169cb537fc"
+    }
+  ],
+  "summary": {
+    "majors": 48,
+    "courses": 3278,
+    "practices": 860,
+    "review_count": 4,
+    "validation": {
+      "graduation_records": 48,
+      "missing_total_credits": 0,
+      "dify_upload_files": 245,
+      "oversized_upload_files": 0,
+      "pass": true
+    },
+    "source_count": 4
+  }
+}

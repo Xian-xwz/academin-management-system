@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "required": [
+    "major_code",
+    "major_name",
+    "degree",
+    "source_file",
+    "needs_review"
+  ],
+  "properties": {
+    "major_code": {
+      "type": "string"
+    },
+    "major_name": {
+      "type": "string"
+    },
+    "major_category": {
+      "type": "string"
+    },
+    "degree": {
+      "type": "string"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "needs_review": {
+      "type": "boolean"
+    }
+  }
+}

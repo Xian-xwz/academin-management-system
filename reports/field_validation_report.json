@@ -1,0 +1,434 @@
+[
+  {
+    "major_name": "水产养殖学",
+    "major_code": "090601",
+    "has_total_credits": true,
+    "course_count": 92,
+    "practice_count": 9,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "海洋渔业科学与技术",
+    "major_code": "090602",
+    "has_total_credits": true,
+    "course_count": 68,
+    "practice_count": 18,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "水生动物医学",
+    "major_code": "090604TK",
+    "has_total_credits": true,
+    "course_count": 79,
+    "practice_count": 11,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "生物科学",
+    "major_code": "071001",
+    "has_total_credits": true,
+    "course_count": 82,
+    "practice_count": 9,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "海洋科学",
+    "major_code": "070701",
+    "has_total_credits": true,
+    "course_count": 91,
+    "practice_count": 27,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "大气科学",
+    "major_code": "070601",
+    "has_total_credits": true,
+    "course_count": 60,
+    "practice_count": 21,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "应用气象学",
+    "major_code": "070602",
+    "has_total_credits": true,
+    "course_count": 55,
+    "practice_count": 19,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "食品科学与工程",
+    "major_code": "082701",
+    "has_total_credits": true,
+    "course_count": 143,
+    "practice_count": 32,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "食品质量与安全",
+    "major_code": "082702",
+    "has_total_credits": true,
+    "course_count": 82,
+    "practice_count": 15,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "生物工程",
+    "major_code": "083001",
+    "has_total_credits": true,
+    "course_count": 77,
+    "practice_count": 15,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "动物科学",
+    "major_code": "090301",
+    "has_total_credits": true,
+    "course_count": 81,
+    "practice_count": 20,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "动物医学",
+    "major_code": "090401",
+    "has_total_credits": true,
+    "course_count": 65,
+    "practice_count": 22,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "林学",
+    "major_code": "090501",
+    "has_total_credits": true,
+    "course_count": 66,
+    "practice_count": 24,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "农学",
+    "major_code": "090101",
+    "has_total_credits": true,
+    "course_count": 72,
+    "practice_count": 22,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "生物技术",
+    "major_code": "071002",
+    "has_total_credits": true,
+    "course_count": 65,
+    "practice_count": 19,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "园林",
+    "major_code": "090502",
+    "has_total_credits": true,
+    "course_count": 64,
+    "practice_count": 23,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "园艺",
+    "major_code": "090102",
+    "has_total_credits": true,
+    "course_count": 80,
+    "practice_count": 20,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "机械设计制造及其自动化",
+    "major_code": "080202",
+    "has_total_credits": true,
+    "course_count": 67,
+    "practice_count": 15,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "能源与动力工程",
+    "major_code": "080501",
+    "has_total_credits": true,
+    "course_count": 76,
+    "practice_count": 21,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "建筑环境与能源应用工程",
+    "major_code": "081002",
+    "has_total_credits": true,
+    "course_count": 61,
+    "practice_count": 19,
+    "needs_review": true,
+    "is_target_major": false
+  },
+  {
+    "major_name": "机械电子工程",
+    "major_code": "080204",
+    "has_total_credits": true,
+    "course_count": 74,
+    "practice_count": 16,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "材料成型及控制工程",
+    "major_code": "080203",
+    "has_total_credits": true,
+    "course_count": 73,
+    "practice_count": 16,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "工业工程",
+    "major_code": "120701",
+    "has_total_credits": true,
+    "course_count": 64,
+    "practice_count": 18,
+    "needs_review": true,
+    "is_target_major": false
+  },
+  {
+    "major_name": "工业设计",
+    "major_code": "080205",
+    "has_total_credits": true,
+    "course_count": 55,
+    "practice_count": 17,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "船舶与海洋工程",
+    "major_code": "081901",
+    "has_total_credits": true,
+    "course_count": 74,
+    "practice_count": 18,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "港口航道与海岸工程",
+    "major_code": "081103",
+    "has_total_credits": true,
+    "course_count": 71,
+    "practice_count": 19,
+    "needs_review": true,
+    "is_target_major": false
+  },
+  {
+    "major_name": "工程管理",
+    "major_code": "120103",
+    "has_total_credits": true,
+    "course_count": 80,
+    "practice_count": 19,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "经济学",
+    "major_code": "020101",
+    "has_total_credits": true,
+    "course_count": 59,
+    "practice_count": 16,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "国际经济与贸易",
+    "major_code": "020401",
+    "has_total_credits": true,
+    "course_count": 58,
+    "practice_count": 16,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "经济与金融",
+    "major_code": "020307T",
+    "has_total_credits": true,
+    "course_count": 59,
+    "practice_count": 17,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "工商管理",
+    "major_code": "120201K",
+    "has_total_credits": true,
+    "course_count": 57,
+    "practice_count": 11,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "财务管理",
+    "major_code": "120204",
+    "has_total_credits": true,
+    "course_count": 54,
+    "practice_count": 19,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "会计学",
+    "major_code": "120203K",
+    "has_total_credits": true,
+    "course_count": 57,
+    "practice_count": 12,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "行政管理",
+    "major_code": "120402",
+    "has_total_credits": true,
+    "course_count": 56,
+    "practice_count": 14,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "旅游管理",
+    "major_code": "120901K",
+    "has_total_credits": true,
+    "course_count": 61,
+    "practice_count": 13,
+    "needs_review": true,
+    "is_target_major": false
+  },
+  {
+    "major_name": "土地资源管理",
+    "major_code": "120404",
+    "has_total_credits": true,
+    "course_count": 66,
+    "practice_count": 23,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "计算机科学与技术",
+    "major_code": "080901",
+    "has_total_credits": true,
+    "course_count": 73,
+    "practice_count": 18,
+    "needs_review": false,
+    "is_target_major": true
+  },
+  {
+    "major_name": "软件工程",
+    "major_code": "080902",
+    "has_total_credits": true,
+    "course_count": 71,
+    "practice_count": 16,
+    "needs_review": false,
+    "is_target_major": true
+  },
+  {
+    "major_name": "信息与计算科学",
+    "major_code": "070102",
+    "has_total_credits": true,
+    "course_count": 49,
+    "practice_count": 17,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "物联网工程",
+    "major_code": "080905",
+    "has_total_credits": true,
+    "course_count": 60,
+    "practice_count": 15,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "信息管理与信息系统",
+    "major_code": "120102",
+    "has_total_credits": true,
+    "course_count": 60,
+    "practice_count": 16,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "数据科学与大数据技术",
+    "major_code": "080910T",
+    "has_total_credits": true,
+    "course_count": 55,
+    "practice_count": 15,
+    "needs_review": false,
+    "is_target_major": true
+  },
+  {
+    "major_name": "电子信息工程",
+    "major_code": "080701",
+    "has_total_credits": true,
+    "course_count": 66,
+    "practice_count": 22,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "海洋技术",
+    "major_code": "070702",
+    "has_total_credits": true,
+    "course_count": 64,
+    "practice_count": 28,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "电子科学与技术",
+    "major_code": "080702",
+    "has_total_credits": true,
+    "course_count": 56,
+    "practice_count": 15,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "电气工程及其自动化",
+    "major_code": "080601",
+    "has_total_credits": true,
+    "course_count": 54,
+    "practice_count": 19,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "自动化",
+    "major_code": "80801",
+    "has_total_credits": true,
+    "course_count": 60,
+    "practice_count": 17,
+    "needs_review": false,
+    "is_target_major": false
+  },
+  {
+    "major_name": "通信工程",
+    "major_code": "080703",
+    "has_total_credits": true,
+    "course_count": 66,
+    "practice_count": 17,
+    "needs_review": false,
+    "is_target_major": false
+  }
+]

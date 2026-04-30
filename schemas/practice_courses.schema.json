@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "required": [
+    "practice_code",
+    "practice_name",
+    "major_code",
+    "credits",
+    "source_file",
+    "needs_review"
+  ],
+  "properties": {
+    "practice_code": {
+      "type": "string"
+    },
+    "practice_name": {
+      "type": "string"
+    },
+    "major_code": {
+      "type": "string"
+    },
+    "module": {
+      "type": "string"
+    },
+    "credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "weeks": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "semester": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "source_file": {
+      "type": "string"
+    },
+    "needs_review": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# 环境与本机
+.env
+.env.local
+.venv
+venv
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+*.log
+npm-debug.log*
+
+# 知识库与上传（大文件/生成物不提交，按需调整）
+knowledge/chroma_db/
+knowledge/raw/*.pdf
+uploads/*
+!uploads/README.md
+reports/archive/
+
+# 后端本地上传目录（头像、论坛附件等，体积大且含个人数据，备份代码时不纳入版本库）
+backend/storage/
+
+# IDE
+.idea/
+.vscode/
+*.swp
