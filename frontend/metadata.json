@@ -1,0 +1,6 @@
+{
+  "name": "基于AI的学业管理系统",
+  "description": "基于 Vue 3 搭建的学业管理系统（包含 AI 问询、论坛、课表、成绩查询等）",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
