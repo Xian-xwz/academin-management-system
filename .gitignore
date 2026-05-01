@@ -27,3 +27,6 @@ backend/storage/
 .idea/
 .vscode/
 *.swp
+
+# 一次性部署脚本（可能含数据库口令等敏感信息，勿提交）
+backend/scripts/deploy_server_mysql_once.sql

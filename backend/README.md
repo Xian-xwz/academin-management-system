@@ -51,6 +51,15 @@ DATABASE_URL=mysql+aiomysql://root:你的密码@127.0.0.1:3306/Academic%20Manage
 
 Dify Chatflow 使用项目根目录 `.env` 中的 `DIFY_APP_API_BASE`、`DIFY_APP_API_KEY`、`DIFY_APP_API_ID`。后端只读取这些值，不会在响应或日志中输出密钥。
 
+OpenClaw 受控工具接口使用服务令牌和学生白名单，不复用学生 JWT 或管理员账号：
+
+```env
+OPENCLAW_TOOL_TOKEN=请填写高强度随机令牌
+OPENCLAW_ALLOWED_STUDENT_IDS=202211911001,202211921001
+```
+
+`OPENCLAW_ALLOWED_STUDENT_IDS=*` 只适合本地演示。生产环境应只写允许被 OpenClaw 查询的学号。
+
 附件上传默认保存在 `backend/storage/` 下，可通过 `UPLOAD_DIR` 覆盖；单文件大小默认限制为 50MB，可通过 `MAX_UPLOAD_SIZE_MB` 覆盖。头像上传保存在 `backend/storage/avatars/`，单张头像限制为 5MB，并通过 `/api/auth/avatars/{file_name}` 访问。
 
 ## 当前已定义的表模型
@@ -69,6 +78,7 @@ Dify Chatflow 使用项目根目录 `.env` 中的 `DIFY_APP_API_BASE`、`DIFY_AP
 | `app/models/academic_warning.py` | `AcademicWarning` | 管理员发送给学生的一次性登录弹窗预警，展示后记录 `shown_at` |
 | `app/models/forum.py` | `ForumTopic`、`ForumComment`、`ForumFile`、`ForumTopicLike` | 论坛话题、一级/二级评论、附件和点赞去重 |
 | `app/models/error_case.py` | `ErrorCase` | AI 问答错误案例与人工纠错记录，后置扩展 |
+| `app/models/openclaw.py` | `OpenClawToolAudit` | OpenClaw 受控工具调用审计记录 |
 
 ## 设计说明
 
@@ -131,6 +141,12 @@ Dify Chatflow 使用项目根目录 `.env` 中的 `DIFY_APP_API_BASE`、`DIFY_AP
 | `POST` | `/api/forum/topics/{topic_id}/files` | 上传论坛附件并写入元数据 |
 | `POST` | `/api/forum/topics/{topic_id}/comments/{comment_id}/files` | 上传评论附件并写入元数据 |
 | `GET` | `/api/forum/files/{file_id}/download` | 下载论坛附件并累加下载次数 |
+| `GET` | `/api/openclaw/health` | OpenClaw 工具探活，返回后端、数据库和 Dify 配置摘要，不返回密钥 |
+| `GET` | `/api/openclaw/students/me/academic-info` | OpenClaw 读取白名单学生本人学业信息 |
+| `GET` | `/api/openclaw/students/me/graduation-progress` | OpenClaw 读取白名单学生本人毕业进度 |
+| `GET` | `/api/openclaw/students/me/schedule` | OpenClaw 读取白名单学生本人课表 |
+| `GET` | `/api/openclaw/students/me/time-plan/events` | OpenClaw 读取白名单学生本人时间规划事件 |
+| `POST` | `/api/openclaw/ai/chat` | OpenClaw 调用非流式 AI 问询封装，不暴露 Dify Key 或原始内部链路 |
 
 `/api/ai/chat/stream` 当前会输出 `status`、`message`、`message_replace`、`message_end`、`error` 等 SSE 事件。`status` 只表示“读取学业数据 / 上传附件 / 检索知识库 / 生成回答 / 整理来源”等处理阶段，不暴露模型内部思维链。AI 附件遵循 Dify 官方流程：先调用 `/files/upload` 获得 `upload_file_id`，再在 `/chat-messages` 的 `files` 数组中以 `transfer_method=local_file` 引用。
 

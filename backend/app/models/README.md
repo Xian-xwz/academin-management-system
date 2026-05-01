@@ -43,6 +43,7 @@ erDiagram
     users ||--o{ forum_files : "uploader_id"
     users ||--o{ forum_topic_likes : "user_id unique per topic"
     users ||--o{ error_cases : "user_id optional"
+    users ||..o{ openclaw_tool_audits : "student_id snapshot"
 
     courses ||--o{ student_courses : "course_id optional"
     courses ||--o{ schedules : "course_id optional"
@@ -389,7 +390,25 @@ erDiagram
 
 ---
 
-## 10. 级联删除一览（实现层行为）
+## 10. OpenClaw 审计：`openclaw_tool_audits`
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `id` | BIGINT PK | |
+| `caller` | VARCHAR(50)，NOT NULL | 调用方，当前固定为 `openclaw` |
+| `tool_name` | VARCHAR(100)，NOT NULL，索引 | 工具名，例如 `ai.chat` |
+| `student_id` | VARCHAR(30)，可空，索引 | 目标学生学号快照；探活类工具为空 |
+| `request_summary` | JSON，可空 | 请求摘要，不保存服务令牌、Dify Key 或完整大段输入 |
+| `response_status` | INT，NOT NULL | HTTP 响应状态码 |
+| `duration_ms` | INT，NOT NULL | 工具调用耗时毫秒 |
+| `error_message` | TEXT，可空 | 错误摘要 |
+| `created_at` / `updated_at` | | |
+
+**关系**：审计表不设置外键，保留调用时的学号快照，避免用户删除或迁移影响历史审计。
+
+---
+
+## 11. 级联删除一览（实现层行为）
 
 | 父表 | 子表 | 行为 |
 |------|------|------|
@@ -402,7 +421,7 @@ erDiagram
 
 ---
 
-## 11. 代码入口
+## 12. 代码入口
 
 - 基类：`app/db/base.py` → `Base`
 - 模型汇总：`app/models/__init__.py`（导入全部模型以便 `Base.metadata.create_all` 注册表）

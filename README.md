@@ -23,6 +23,17 @@
 
 - 具体代码与依赖初始化按 `技术文档.md` 与开发进度再补；当前为目录骨架 + 各目录 `README` 说明。
 
+## 公网部署
+
+- 访问地址：`https://academin-management-system.maplexian.cn`
+- 后端健康检查：`https://academin-management-system.maplexian.cn/api/health`
+- 服务器部署目录：`/opt/academin-management-system/app`
+- 后端服务：`academic-backend.service`，监听 `127.0.0.1:8081`
+- 前端静态目录：`/var/www/academin-management-system`
+- Caddy：静态站点 + `/api/*` 反代到 `127.0.0.1:8081`
+
+演示数据已在服务器导入；示例学生账号 `202211911001`，密码 `123456`。正式展示前请根据需要更换演示密码。
+
 ## Git 与 GitHub 备份
 
 本仓库已在本地初始化 Git（默认分支 `main`），`.env`、前端 `node_modules`、`backend/storage/` 等已通过根目录 `.gitignore` 排除，请勿将密钥提交到远端。

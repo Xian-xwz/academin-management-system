@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from hmac import compare_digest
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
@@ -17,6 +19,13 @@ from app.models import User
 
 password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 bearer_scheme = HTTPBearer(auto_error=False)
+
+
+@dataclass(frozen=True)
+class OpenClawClient:
+    """OpenClaw 受控工具调用方身份。"""
+
+    name: str = "openclaw"
 
 
 def hash_password(password: str) -> str:
@@ -61,3 +70,15 @@ async def require_admin(current_user: User = Depends(get_current_user)) -> User:
     if current_user.role != "admin":
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="仅管理员可访问该接口")
     return current_user
+
+
+async def require_openclaw_client(
+    credentials: HTTPAuthorizationCredentials | None = Depends(bearer_scheme),
+) -> OpenClawClient:
+    if not settings.openclaw_tool_token:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail="OpenClaw 工具令牌未配置")
+    if credentials is None or credentials.scheme.lower() != "bearer":
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="缺少 OpenClaw 工具令牌")
+    if not compare_digest(credentials.credentials, settings.openclaw_tool_token):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="OpenClaw 工具令牌无效")
+    return OpenClawClient()

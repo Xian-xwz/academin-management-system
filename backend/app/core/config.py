@@ -88,6 +88,8 @@ class Settings:
     dify_timeout_seconds: float
     upload_dir: Path
     max_upload_size_mb: int
+    openclaw_tool_token: str | None
+    openclaw_allowed_student_ids: set[str]
 
 
 def load_settings() -> Settings:
@@ -99,6 +101,12 @@ def load_settings() -> Settings:
 
     origins_raw = _get_config_value(file_values, "BACKEND_CORS_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")
     cors_origins = [origin.strip() for origin in (origins_raw or "").split(",") if origin.strip()]
+    openclaw_students_raw = _get_config_value(file_values, "OPENCLAW_ALLOWED_STUDENT_IDS", "")
+    openclaw_allowed_student_ids = {
+        student_id.strip()
+        for student_id in (openclaw_students_raw or "").split(",")
+        if student_id.strip()
+    }
 
     return Settings(
         app_name=_get_config_value(file_values, "APP_NAME", "AI 学业管理系统后端") or "AI 学业管理系统后端",
@@ -115,6 +123,8 @@ def load_settings() -> Settings:
         dify_timeout_seconds=float(_get_config_value(file_values, "DIFY_TIMEOUT_SECONDS", "60") or "60"),
         upload_dir=Path(_get_config_value(file_values, "UPLOAD_DIR", str(BACKEND_ROOT / "storage")) or str(BACKEND_ROOT / "storage")),
         max_upload_size_mb=int(_get_config_value(file_values, "MAX_UPLOAD_SIZE_MB", "50") or "50"),
+        openclaw_tool_token=_get_config_value(file_values, "OPENCLAW_TOOL_TOKEN"),
+        openclaw_allowed_student_ids=openclaw_allowed_student_ids,
     )
 
 
