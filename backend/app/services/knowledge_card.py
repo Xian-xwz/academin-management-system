@@ -328,9 +328,7 @@ class KnowledgeCardService:
         return {"path": path, "relative_path": relative.as_posix(), "mime_type": mime_type, "size": len(content)}
 
     async def _persist_output_image(self, card: KnowledgeCard, outputs: dict) -> None:
-        image_url = self._find_first(outputs, {"image_url", "output_image_url", "url"})
-        if not image_url:
-            image_url = self._find_image_url_in_text(json.dumps(outputs, ensure_ascii=False))
+        image_url = self._extract_output_image_url(outputs)
         image_base64 = self._find_first(outputs, {"image_base64", "base64"})
         content: bytes | None = None
         suffix = ".png"
@@ -350,6 +348,44 @@ class KnowledgeCardService:
         path.write_bytes(content)
         card.output_image_path = relative.as_posix()
         card.output_image_url = self._file_url(card.id, "output")
+
+    def _extract_output_image_url(self, outputs: dict) -> str | None:
+        """只从最终输出中提取生成图，避免把上传输入图的 file-preview 当成成品图。"""
+        if not isinstance(outputs, dict):
+            return None
+
+        candidates: list[str] = []
+
+        # Dify Chat App 常把最终图片 URL 放在 answer 文本中，这是最高优先级。
+        for key in ("answer", "output", "result", "text"):
+            value = outputs.get(key)
+            if isinstance(value, str):
+                candidates.extend(self._find_image_urls_in_text(value))
+
+        final_outputs = outputs.get("outputs")
+        if isinstance(final_outputs, dict):
+            for key in ("image_url", "output_image_url", "generated_image_url", "card_image_url", "url"):
+                value = final_outputs.get(key)
+                if isinstance(value, str):
+                    candidates.extend(self._find_image_urls_in_text(value))
+            for key in ("answer", "output", "result", "text"):
+                value = final_outputs.get(key)
+                if isinstance(value, str):
+                    candidates.extend(self._find_image_urls_in_text(value))
+
+        for key in ("image_url", "output_image_url", "generated_image_url", "card_image_url"):
+            value = self._find_first(outputs, {key})
+            if isinstance(value, str):
+                candidates.extend(self._find_image_urls_in_text(value))
+
+        # 最后才检查 Dify message_file，仍然过滤输入预览和插件图标。
+        files = outputs.get("files")
+        if isinstance(files, list):
+            for item in files:
+                if isinstance(item, dict):
+                    candidates.extend(self._find_image_urls_in_text(json.dumps(item, ensure_ascii=False)))
+
+        return self._choose_output_image_url(candidates)
 
     def _apply_outputs_to_card(self, card: KnowledgeCard, outputs: dict) -> None:
         card.title = self._find_first(outputs, {"title", "card_title"}) or card.title
@@ -378,9 +414,26 @@ class KnowledgeCardService:
     def _present(self, value: Any) -> bool:
         return value is not None and value != ""
 
-    def _find_image_url_in_text(self, value: str) -> str | None:
-        match = re.search(r"https?://[^\s\"')]+\.(?:png|jpe?g|webp)(?:\?[^\s\"')]*)?", value, re.I)
-        return match.group(0) if match else None
+    def _find_image_urls_in_text(self, value: str) -> list[str]:
+        return re.findall(r"https?://[^\s\"')]+\.(?:png|jpe?g|webp)(?:\?[^\s\"')]*)?", value, re.I)
+
+    def _choose_output_image_url(self, candidates: list[str]) -> str | None:
+        cleaned: list[str] = []
+        for candidate in candidates:
+            url = candidate.strip().rstrip("，。；;、")
+            if not url or url in cleaned:
+                continue
+            if "/file-preview" in url:
+                continue
+            if "/console/api/workspaces/current/plugin/icon" in url:
+                continue
+            cleaned.append(url)
+        if not cleaned:
+            return None
+        for url in cleaned:
+            if "/files/tools/" in url:
+                return url
+        return cleaned[0]
 
     def _sanitize(self, value: Any) -> Any:
         if isinstance(value, dict):
