@@ -210,6 +210,7 @@ Agent 流式响应中的 `agent_thought` 会被后端翻译成前端状态步骤
 | `GET` | `/api/knowledge-cards` | 分页查询当前用户知识卡片画廊，支持状态和关键词筛选 |
 | `GET` | `/api/knowledge-cards/{card_id}` | 查询当前用户某张知识卡片详情 |
 | `GET` | `/api/knowledge-cards/{card_id}/files/{kind}` | 读取知识卡片输入图或输出图，`kind` 为 `input` / `output` |
+| `DELETE` | `/api/knowledge-cards/{card_id}` | 删除当前用户某张知识卡片，并清理本地保存的输入图和输出图 |
 | `POST` | `/api/knowledge-cards/stream` | 以 SSE 生成知识卡片，支持文本、单图或文本+单图输入 |
 
 `/api/ai/chat/stream` 当前会输出 `status`、`message`、`message_replace`、`message_end`、`error` 等 SSE 事件。`status` 只表示“读取学业数据 / 上传附件 / 检索知识库 / 生成回答 / 整理来源”等处理阶段，不暴露模型内部思维链。AI 附件遵循 Dify 官方流程：先调用 `/files/upload` 获得 `upload_file_id`，再在 `/chat-messages` 的 `files` 数组中以 `transfer_method=local_file` 引用。

@@ -24,6 +24,10 @@ export const getKnowledgeCard = async (id: number): Promise<KnowledgeCardDetail>
   return unwrapResponse<KnowledgeCardDetail>(res);
 };
 
+export const deleteKnowledgeCard = async (id: number): Promise<void> => {
+  await request.delete(`/knowledge-cards/${id}`);
+};
+
 export const loadKnowledgeCardImage = async (url: string): Promise<string> => {
   const token = getToken();
   const apiBase = import.meta.env.VITE_API_BASE || '/api';

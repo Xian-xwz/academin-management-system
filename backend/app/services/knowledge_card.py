@@ -73,6 +73,13 @@ class KnowledgeCardService:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="图片文件不存在")
         return file_path, self._guess_mime(file_path)
 
+    async def delete_card(self, db: AsyncSession, current_user: User, card_id: int) -> None:
+        card = await self._get_owned_card(db, current_user, card_id)
+        relative_paths = [card.input_image_path, card.output_image_path]
+        await db.delete(card)
+        await db.commit()
+        self._delete_storage_files(relative_paths)
+
     async def generate_stream(
         self,
         db: AsyncSession,
@@ -483,6 +490,15 @@ class KnowledgeCardService:
         if card is None or card.user_id != current_user.id:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="未找到知识卡片")
         return card
+
+    def _delete_storage_files(self, relative_paths: list[str | None]) -> None:
+        storage_root = settings.upload_dir.resolve()
+        for relative_path in relative_paths:
+            if not relative_path:
+                continue
+            file_path = (settings.upload_dir / relative_path).resolve()
+            if storage_root in file_path.parents and file_path.exists():
+                file_path.unlink(missing_ok=True)
 
     def _to_item(self, card: KnowledgeCard) -> KnowledgeCardItem:
         return KnowledgeCardItem(

@@ -28,7 +28,7 @@ View your app in AI Studio: https://ai.studio/apps/3c190622-80c8-4101-8e7e-5c64e
 - AI 问询需要先登录获得后端 JWT；前端通过 `POST /api/ai/chat/stream` 消费 SSE 流式响应，并展示后端 `status` 事件形成的处理过程。助手消息必须通过 `messages.value[index]` 中的响应式对象逐字追加，避免修改原始对象引用导致页面等到结束后才一次性渲染。历史会话下拉会读取 `/api/ai/conversations`，点击后再读取 `/api/ai/conversations/{conversation_id}` 回显本地落库消息。
 - AI 历史会话下拉右侧提供减号删除入口，会调用 `DELETE /api/ai/conversations/{conversation_id}` 删除当前用户本地会话。
 - AI 输入框附件选择后只会先挂载在输入框上方，不会立即发送；需要继续输入文字后点击发送或按 Enter 才会随问题一起提交。发送时前端先调用 `/api/ai/files/upload`，由后端代理上传到 Dify `/files/upload`，再把 `upload_file_id` 放入流式聊天请求的 `files` 参数。
-- 知识卡片入口位于学生端侧栏“知识卡片”，默认展示画廊；点击“新建卡片”打开 Drawer，可输入知识文本、上传单张参考图片和补充要求。前端通过 `POST /api/knowledge-cards/stream` 消费 SSE 进度事件，生成完成后重新加载历史并通过授权 fetch 获取图片 blob 进行预览和下载；用户不能手动选择风格或模板。
+- 知识卡片入口位于学生端侧栏“知识卡片”，默认展示画廊；点击“新建卡片”打开 Drawer，可输入知识文本、上传单张参考图片和补充要求。前端通过 `POST /api/knowledge-cards/stream` 消费 SSE 进度事件，生成完成后重新加载历史并通过授权 fetch 获取图片 blob 进行预览和下载；画廊卡片支持删除，删除前二次确认并调用 `DELETE /api/knowledge-cards/{id}` 清理服务端图片；用户不能手动选择风格或模板。
 - AI 助手回复使用 `markdown-it` 渲染 Markdown，支持标题、列表、加粗、引用、代码块、表格和链接等常见格式，样式定义在 `src/components/ChatWindow/index.vue`。
 - 首页“毕业学分进度”与学号查询页共用 `/api/student/{student_id}/academic-info`，读取当前登录学生真实已修/毕业要求学分；“近期待办”读取时间规划事件并可直接勾选完成，状态会同步回 `/api/time-plan/events/{event_id}`；“消息通知”读取 `/api/dashboard/notifications`，聚合论坛回复、点赞和 AI 问询记录，默认折叠展示前 4 条，标记已读后会按当前账号写入本地已读集合并隐藏。
 - 时间规划列表和日历共用 `/api/time-plan/events` 数据；日历会自动定位到第一条事件所在月份，并以按类型区分颜色的简洁卡片展示课程、考试、作业和个人事件。

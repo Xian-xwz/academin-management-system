@@ -60,6 +60,16 @@ async def get_knowledge_card_file(
     return FileResponse(path=file_path, media_type=mime_type)
 
 
+@router.delete("/{card_id}")
+async def delete_knowledge_card(
+    card_id: int,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+) -> dict:
+    await knowledge_card_service.delete_card(db, current_user, card_id)
+    return success({"deleted": True})
+
+
 @router.post("/stream")
 async def generate_knowledge_card_stream(
     input_text: str | None = Form(None, alias="inputText"),

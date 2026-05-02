@@ -73,9 +73,12 @@
               </div>
               <p v-if="card.routeReason" class="mt-3 line-clamp-2 text-sm text-slate-500">{{ card.routeReason }}</p>
               <p v-if="card.errorMessage" class="mt-3 line-clamp-2 text-sm text-red-500">{{ card.errorMessage }}</p>
-              <div class="mt-4 flex justify-between">
+              <div class="mt-4 flex items-center justify-between gap-2">
                 <el-button link type="primary" @click="openDetail(card.id)">查看详情</el-button>
-                <el-button link :disabled="!cardImageUrls[card.id]" @click="downloadImage(card)">下载</el-button>
+                <div class="flex items-center gap-1">
+                  <el-button link :disabled="!cardImageUrls[card.id]" @click="downloadImage(card)">下载</el-button>
+                  <el-button link type="danger" @click="deleteCard(card)">删除</el-button>
+                </div>
               </div>
             </div>
           </div>
@@ -213,9 +216,11 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue';
-import { ElMessage, UploadFile, UploadUserFile } from 'element-plus';
+import { ElMessage, ElMessageBox } from 'element-plus';
+import type { UploadFile, UploadUserFile } from 'element-plus';
 import { CircleCheck, Loading, Picture, Plus, Search, UploadFilled } from '@element-plus/icons-vue';
 import {
+  deleteKnowledgeCard,
   generateKnowledgeCardStream,
   getKnowledgeCard,
   getKnowledgeCards,
@@ -389,6 +394,37 @@ const downloadImage = (card: KnowledgeCardItem | KnowledgeCardDetail) => {
   link.href = imageUrl;
   link.download = `${card.title || 'knowledge-card'}-${card.id}.png`;
   link.click();
+};
+
+const deleteCard = async (card: KnowledgeCardItem) => {
+  try {
+    await ElMessageBox.confirm(
+      `确认删除「${card.title || '未命名卡片'}」吗？删除后将同时清理已保存的图片。`,
+      '删除知识卡片',
+      {
+        type: 'warning',
+        confirmButtonText: '删除',
+        cancelButtonText: '取消',
+        confirmButtonClass: 'el-button--danger'
+      }
+    );
+  } catch {
+    return;
+  }
+
+  await deleteKnowledgeCard(card.id);
+  if (cardImageUrls[card.id]) {
+    URL.revokeObjectURL(cardImageUrls[card.id]);
+    delete cardImageUrls[card.id];
+  }
+  if (detail.value?.id === card.id) {
+    detailVisible.value = false;
+    detail.value = undefined;
+    revokeDetailImageUrl();
+  }
+  ElMessage.success('知识卡片已删除');
+  const nextPage = cards.value.length === 1 && page.value > 1 ? page.value - 1 : page.value;
+  await loadCards(nextPage);
 };
 
 const statusText = (status: string) => {
