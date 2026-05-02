@@ -36,7 +36,9 @@ def _load_env_file() -> dict[str, str]:
                 key = key.strip()
                 value = value.strip().strip('"')
                 if key in {"host", "port", "user", "password", "database", "charset"}:
-                    values[f"MYSQL_{key.upper()}"] = value
+                    env_key = f"MYSQL_{key.upper()}"
+                    if value or env_key not in values:
+                        values[env_key] = value
 
     return values
 
@@ -90,6 +92,13 @@ class Settings:
     max_upload_size_mb: int
     openclaw_tool_token: str | None
     openclaw_allowed_student_ids: set[str]
+    mock_dynamic_enabled: bool
+    mock_dynamic_use_llm: bool
+    dashscope_api_key: str | None
+    dashscope_base_url: str
+    dashscope_model: str
+    gemini_api_key: str | None
+    gemini_model: str
 
 
 def load_settings() -> Settings:
@@ -107,6 +116,7 @@ def load_settings() -> Settings:
         for student_id in (openclaw_students_raw or "").split(",")
         if student_id.strip()
     }
+    mock_dynamic_use_llm_raw = (_get_config_value(file_values, "MOCK_DYNAMIC_USE_LLM", "true") or "true").lower()
 
     return Settings(
         app_name=_get_config_value(file_values, "APP_NAME", "AI 学业管理系统后端") or "AI 学业管理系统后端",
@@ -125,6 +135,13 @@ def load_settings() -> Settings:
         max_upload_size_mb=int(_get_config_value(file_values, "MAX_UPLOAD_SIZE_MB", "50") or "50"),
         openclaw_tool_token=_get_config_value(file_values, "OPENCLAW_TOOL_TOKEN"),
         openclaw_allowed_student_ids=openclaw_allowed_student_ids,
+        mock_dynamic_enabled=(_get_config_value(file_values, "MOCK_DYNAMIC_ENABLED", "true") or "true").lower() in {"1", "true", "yes", "on"},
+        mock_dynamic_use_llm=mock_dynamic_use_llm_raw in {"1", "true", "yes", "on"},
+        dashscope_api_key=_get_config_value(file_values, "DASHSCOPE_API_KEY"),
+        dashscope_base_url=(_get_config_value(file_values, "DASHSCOPE_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1") or "https://dashscope.aliyuncs.com/compatible-mode/v1").rstrip("/"),
+        dashscope_model=_get_config_value(file_values, "DASHSCOPE_MODEL", "qwen3.6-flash") or "qwen3.6-flash",
+        gemini_api_key=_get_config_value(file_values, "GEMINI_API_KEY"),
+        gemini_model=_get_config_value(file_values, "GEMINI_MODEL", "gemini-2.5-flash") or "gemini-2.5-flash",
     )
 
 

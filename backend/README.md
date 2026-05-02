@@ -51,6 +51,20 @@ DATABASE_URL=mysql+aiomysql://root:你的密码@127.0.0.1:3306/Academic%20Manage
 
 Dify Chatflow 使用项目根目录 `.env` 中的 `DIFY_APP_API_BASE`、`DIFY_APP_API_KEY`、`DIFY_APP_API_ID`。后端只读取这些值，不会在响应或日志中输出密钥。
 
+Mock 动态器默认在学生登录后触发，为对应专业论坛生成新帖或评论。配置项：
+
+```env
+MOCK_DYNAMIC_ENABLED=true
+MOCK_DYNAMIC_USE_LLM=true
+DASHSCOPE_API_KEY=请填写 DashScope Key
+DASHSCOPE_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1
+DASHSCOPE_MODEL=qwen3.6-flash
+GEMINI_API_KEY=请填写 Gemini Key
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+动态器会先尝试 DashScope，再尝试 Gemini；若两者未配置或请求失败，后端会使用内置模板兜底，不影响登录成功。
+
 OpenClaw 受控工具接口使用服务令牌和学生白名单，不复用学生 JWT 或管理员账号：
 
 ```env
