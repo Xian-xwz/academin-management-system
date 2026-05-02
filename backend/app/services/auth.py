@@ -9,7 +9,7 @@ from sqlalchemy.orm import selectinload
 
 from app.core.security import create_access_token, hash_password, verify_password
 from app.models import AcademicWarning, Major, User
-from app.schemas.auth import AcademicWarningPopup, AuthResponse, LoginRequest, RegisterRequest, UserInfo
+from app.schemas.auth import AcademicWarningPopup, AuthResponse, ChangePasswordRequest, LoginRequest, RegisterRequest, UserInfo
 from app.services.dashboard import dashboard_service
 
 
@@ -28,8 +28,11 @@ def build_user_info(user: User) -> UserInfo:
 
 
 class AuthService:
+    weak_passwords = {"123456", "12345678", "password", "qwerty123", "admin123"}
+
     async def register(self, db: AsyncSession, payload: RegisterRequest) -> AuthResponse:
         student_id = payload.student_id.strip()
+        self._validate_password_strength(payload.password, student_id)
         result = await db.execute(select(User).where(User.student_id == student_id))
         if result.scalar_one_or_none() is not None:
             raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="该学号已注册")
@@ -79,6 +82,16 @@ class AuthService:
             pendingAcademicWarnings=pending_warnings,
         )
 
+    async def change_password(self, db: AsyncSession, user: User, payload: ChangePasswordRequest) -> None:
+        if not verify_password(payload.old_password, user.password_hash):
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="原密码不正确")
+        self._validate_password_strength(payload.new_password, user.student_id)
+        if verify_password(payload.new_password, user.password_hash):
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="新密码不能与原密码相同")
+
+        user.password_hash = hash_password(payload.new_password)
+        await db.commit()
+
     async def _pop_pending_academic_warnings(self, db: AsyncSession, user: User) -> list[AcademicWarningPopup]:
         if user.role != "student":
             return []
@@ -96,6 +109,23 @@ class AuthService:
             warning.shown_at = now
         await db.commit()
         return [AcademicWarningPopup(id=warning.id, title=warning.title, content=warning.content) for warning in warnings]
+
+    def _validate_password_strength(self, password: str, student_id: str | None = None) -> None:
+        normalized = password.strip()
+        if len(normalized) < 8:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="密码至少需要 8 位")
+        if normalized != password:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="密码首尾不能包含空格")
+        if normalized in self.weak_passwords:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="密码过于简单，请更换更安全的密码")
+        if student_id and normalized == student_id:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="密码不能与学号相同")
+        if normalized.isdigit():
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="密码不能是纯数字")
+        has_alpha = any(ch.isalpha() for ch in normalized)
+        has_digit = any(ch.isdigit() for ch in normalized)
+        if not (has_alpha and has_digit):
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="密码需同时包含字母和数字")
 
 
 auth_service = AuthService()

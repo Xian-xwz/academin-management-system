@@ -44,6 +44,10 @@
           <el-icon><Service /></el-icon>
           <template #title>AI 问询</template>
         </el-menu-item>
+        <el-menu-item index="/knowledge-cards">
+          <el-icon><Picture /></el-icon>
+          <template #title>知识卡片</template>
+        </el-menu-item>
         <el-menu-item v-if="userStore.userInfo?.role === 'admin'" index="/admin">
           <el-icon><DataBoard /></el-icon>
           <template #title>返回教务工作台</template>
@@ -74,6 +78,7 @@
         <el-menu-item index="/time-plan"><el-icon><Clock /></el-icon> 时间规划</el-menu-item>
         <el-menu-item index="/forum"><el-icon><ChatLineRound /></el-icon> 交流论坛</el-menu-item>
         <el-menu-item index="/ai-chat"><el-icon><Service /></el-icon> AI 问询</el-menu-item>
+        <el-menu-item index="/knowledge-cards"><el-icon><Picture /></el-icon> 知识卡片</el-menu-item>
         <el-menu-item v-if="userStore.userInfo?.role === 'admin'" index="/admin"><el-icon><DataBoard /></el-icon> 返回教务工作台</el-menu-item>
       </el-menu>
     </el-drawer>
@@ -119,7 +124,7 @@
 import { ref, onMounted, watch, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '@/stores/user';
-import { DataBoard, Search, Calendar, Clock, ChatLineRound, Service, ArrowDown, Expand } from '@element-plus/icons-vue';
+import { DataBoard, Search, Calendar, Clock, ChatLineRound, Service, ArrowDown, Expand, Picture } from '@element-plus/icons-vue';
 
 const router = useRouter();
 const userStore = useUserStore();

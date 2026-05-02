@@ -19,7 +19,7 @@ def main() -> None:
         health.raise_for_status()
         assert health.json()["code"] == 0
 
-        login = client.post("/api/auth/login", json={"username": "2021000001", "password": "123456"})
+        login = client.post("/api/auth/login", json={"username": "2021000001", "password": "guangdong11"})
         print(f"login={login.status_code}")
         login.raise_for_status()
         token = login.json()["data"]["token"]

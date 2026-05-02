@@ -12,7 +12,7 @@ from app.core.security import get_current_user
 from app.core.responses import success
 from app.db.session import get_db
 from app.models import User
-from app.schemas.auth import AuthResponse, LoginRequest, RegisterRequest, UserInfo
+from app.schemas.auth import ChangePasswordRequest, LoginRequest, RegisterRequest
 from app.services.auth import auth_service, build_user_info
 
 
@@ -32,6 +32,16 @@ async def login(payload: LoginRequest, db: AsyncSession = Depends(get_db)) -> di
 @router.get("/me")
 async def me(current_user: User = Depends(get_current_user)) -> dict:
     return success(build_user_info(current_user).model_dump())
+
+
+@router.post("/change-password")
+async def change_password(
+    payload: ChangePasswordRequest,
+    current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> dict:
+    await auth_service.change_password(db, current_user, payload)
+    return success({"changed": True})
 
 
 @router.post("/avatar")

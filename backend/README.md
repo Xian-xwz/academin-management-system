@@ -39,6 +39,8 @@ python scripts/import_knowledge_json.py
 python scripts/seed_demo_data.py
 python scripts/seed_scenario_data.py
 python scripts/seed_dashboard_notifications.py
+python scripts/migrate_knowledge_cards.py
+python scripts/harness_knowledge_card.py --base-url http://127.0.0.1:8000
 python scripts/harness_api_smoke.py
 python scripts/harness_admin_api.py
 ```
@@ -49,7 +51,18 @@ python scripts/harness_admin_api.py
 DATABASE_URL=mysql+aiomysql://root:你的密码@127.0.0.1:3306/Academic%20Management%20System?charset=utf8mb4
 ```
 
-Dify Chatflow 使用项目根目录 `.env` 中的 `DIFY_APP_API_BASE`、`DIFY_APP_API_KEY`、`DIFY_APP_API_ID`。后端只读取这些值，不会在响应或日志中输出密钥。
+Dify Chatflow / Agent 使用项目根目录 `.env` 中的 `DIFY_APP_API_BASE`、`DIFY_APP_API_KEY`、`DIFY_APP_API_ID`。正式版 Agent 也可配置 `DIFY_AGENT_TOKEN` / `dify_agent_token` 与 `DIFY_AGENT_ID` / `dify_agent_id`，后端会优先读取 Agent 专用变量，再回退到 `DIFY_APP_API_KEY`。后端不会在响应或日志中输出密钥。
+
+知识卡片功能使用独立的 Dify Workflow 配置，不复用学业问询 Agent：
+
+```env
+DIFY_KNOWLEDGE_CARD_API_BASE=https://api.dify.ai/v1
+DIFY_KNOWLEDGE_CARD_API_KEY=请填写知识卡片 Workflow App Key
+DIFY_KNOWLEDGE_CARD_WORKFLOW_ID=请填写 Workflow ID
+DIFY_KNOWLEDGE_CARD_TIMEOUT_SECONDS=180
+```
+
+知识卡片 Dify 应用当前输入变量为 `content`、`prompt`，后端会同时兼容发送 `input_text`、`extra_prompt`。若用户上传图片，后端会先保存输入图片，再上传到 Dify `/files/upload`；调用时优先尝试 `/workflows/run`，若 Dify 返回 `not_workflow_app` 则自动切到 `/chat-messages`。Dify 输出可使用 `answer` 返回图片 URL，也可使用 `image_url` / `image_base64`。
 
 Mock 动态器默认在学生登录后触发，为对应专业论坛生成新帖或评论。配置项：
 
@@ -74,6 +87,19 @@ OPENCLAW_ALLOWED_STUDENT_IDS=202211911001,202211921001
 
 `OPENCLAW_ALLOWED_STUDENT_IDS=*` 只适合本地演示。生产环境应只写允许被 OpenClaw 查询的学号。
 
+Dify Agent 正式版个人助手工具使用服务令牌 + 短期用户绑定令牌：
+
+```env
+AGENT_TOOL_TOKEN=请填写高强度随机令牌
+AGENT_SESSION_EXPIRE_MINUTES=120
+```
+
+若 `AGENT_TOOL_TOKEN` 未配置，后端会临时回退使用 `OPENCLAW_TOOL_TOKEN`，便于从第一阶段工具平滑迁移。正式配置 Dify Custom Tool 时，建议使用 `AGENT_TOOL_TOKEN`，并让已登录用户先调用 `/api/agent-tools/sessions` 获取 `agentSessionToken`，Dify 工具请求再携带该会话令牌以绑定当前用户权限。
+
+当前 `/api/ai/chat` 与 `/api/ai/chat/stream` 会在调用 Dify 应用时自动注入 `agentSessionToken` 与过期时间到 Dify inputs，供 Agent 工具调用使用；本地会话记录会过滤该短期令牌，避免明文落库。
+
+Agent 流式响应中的 `agent_thought` 会被后端翻译成前端状态步骤，例如“正在调用工具：查询毕业进度”“查询课表已返回结果，正在整理回答”，便于页面展示工具调用路径。
+
 附件上传默认保存在 `backend/storage/` 下，可通过 `UPLOAD_DIR` 覆盖；单文件大小默认限制为 50MB，可通过 `MAX_UPLOAD_SIZE_MB` 覆盖。头像上传保存在 `backend/storage/avatars/`，单张头像限制为 5MB，并通过 `/api/auth/avatars/{file_name}` 访问。
 
 ## 当前已定义的表模型
@@ -93,6 +119,7 @@ OPENCLAW_ALLOWED_STUDENT_IDS=202211911001,202211921001
 | `app/models/forum.py` | `ForumTopic`、`ForumComment`、`ForumFile`、`ForumTopicLike` | 论坛话题、一级/二级评论、附件和点赞去重 |
 | `app/models/error_case.py` | `ErrorCase` | AI 问答错误案例与人工纠错记录，后置扩展 |
 | `app/models/openclaw.py` | `OpenClawToolAudit` | OpenClaw 受控工具调用审计记录 |
+| `app/models/knowledge_card.py` | `KnowledgeCard` | 保存知识卡片输入、Dify 工作流响应、prompt、生成图片和状态 |
 
 ## 设计说明
 
@@ -161,8 +188,39 @@ OPENCLAW_ALLOWED_STUDENT_IDS=202211911001,202211921001
 | `GET` | `/api/openclaw/students/me/schedule` | OpenClaw 读取白名单学生本人课表 |
 | `GET` | `/api/openclaw/students/me/time-plan/events` | OpenClaw 读取白名单学生本人时间规划事件 |
 | `POST` | `/api/openclaw/ai/chat` | OpenClaw 调用非流式 AI 问询封装，不暴露 Dify Key 或原始内部链路 |
+| `POST` | `/api/agent-tools/sessions` | 登录用户获取短期 Agent 会话令牌，用于公共 Bot 权限绑定 |
+| `GET` | `/api/agent-tools/me` | Dify Agent 查询当前绑定用户身份 |
+| `GET` | `/api/agent-tools/me/academic-info` | Dify Agent 查询当前绑定学生学业详情 |
+| `GET` | `/api/agent-tools/me/graduation-progress` | Dify Agent 查询当前绑定学生毕业进度 |
+| `GET` | `/api/agent-tools/me/schedule` | Dify Agent 查询当前绑定学生课表 |
+| `GET` | `/api/agent-tools/me/time-plan/events` | Dify Agent 查询当前绑定学生时间规划事件 |
+| `GET` | `/api/agent-tools/admin/students/{student_id}/academic-info` | 管理员 Dify Agent 查询指定学生学业详情 |
+| `GET` | `/api/agent-tools/admin/students/{student_id}/graduation-progress` | 管理员 Dify Agent 查询指定学生毕业进度 |
+| `GET` | `/api/agent-tools/admin/students/{student_id}/schedule` | 管理员 Dify Agent 查询指定学生课表 |
+| `GET` | `/api/agent-tools/admin/students/{student_id}/time-plan/events` | 管理员 Dify Agent 查询指定学生时间规划事件 |
+| `POST` | `/api/agent-tools/me/time-plan/events` | Dify Agent 为当前绑定学生创建时间规划事件 |
+| `PUT` | `/api/agent-tools/me/time-plan/events/{event_id}` | Dify Agent 更新当前绑定学生自己的时间规划事件 |
+| `GET` | `/api/agent-tools/forum/majors` | Dify Agent 查询论坛专业列表 |
+| `GET` | `/api/agent-tools/forum/topics` | Dify Agent 查询论坛帖子列表 |
+| `GET` | `/api/agent-tools/forum/topics/{topic_id}` | Dify Agent 查询论坛帖子详情 |
+| `POST` | `/api/agent-tools/forum/topics` | Dify Agent 以当前绑定用户身份发布帖子 |
+| `PUT` | `/api/agent-tools/forum/topics/{topic_id}` | Dify Agent 编辑帖子，学生仅限本人帖子，管理员可编辑所有帖子 |
+| `POST` | `/api/agent-tools/forum/topics/{topic_id}/comments` | Dify Agent 以当前绑定用户身份发表评论 |
+| `PATCH` | `/api/agent-tools/admin/forum/topics/{topic_id}` | 管理员 Dify Agent 治理论坛帖子状态 |
+| `GET` | `/api/knowledge-cards` | 分页查询当前用户知识卡片画廊，支持状态和关键词筛选 |
+| `GET` | `/api/knowledge-cards/{card_id}` | 查询当前用户某张知识卡片详情 |
+| `GET` | `/api/knowledge-cards/{card_id}/files/{kind}` | 读取知识卡片输入图或输出图，`kind` 为 `input` / `output` |
+| `POST` | `/api/knowledge-cards/stream` | 以 SSE 生成知识卡片，支持文本、单图或文本+单图输入 |
 
 `/api/ai/chat/stream` 当前会输出 `status`、`message`、`message_replace`、`message_end`、`error` 等 SSE 事件。`status` 只表示“读取学业数据 / 上传附件 / 检索知识库 / 生成回答 / 整理来源”等处理阶段，不暴露模型内部思维链。AI 附件遵循 Dify 官方流程：先调用 `/files/upload` 获得 `upload_file_id`，再在 `/chat-messages` 的 `files` 数组中以 `transfer_method=local_file` 引用。
+
+知识卡片建表迁移依赖：
+
+```bash
+python scripts/migrate_knowledge_cards.py
+```
+
+迁移会幂等创建 `knowledge_cards` 表和索引。生成图片保存在 `UPLOAD_DIR/knowledge-cards/outputs/`，前端通过授权接口加载图片 blob，避免直接打开图片 URL 时缺少 JWT。
 
 评论附件依赖 `forum_files.comment_id` 字段，旧库需运行：
 
@@ -172,7 +230,7 @@ python scripts/migrate_forum_comment_files.py
 
 ## 演示账号
 
-运行 `python scripts/seed_demo_data.py` 后会创建以下本地演示账号，密码均为 `123456`：
+运行 `python scripts/seed_demo_data.py` 后会创建以下本地演示账号，密码均为 `guangdong11`：
 
 | 学号 | 专业 |
 |------|------|
@@ -194,4 +252,9 @@ python scripts/migrate_forum_comment_files.py
 
 电科场景数据还会生成 3 条论坛话题，内容采用学生真实讨论风格；若 `docs/参考资料/电科/传感器2023年试题/` 下存在文件，会象征性复制前 3 个文件到论坛附件存储并写入 `forum_files`。
 
-> 注意：`seed_scenario_data.py` 的默认密码也是 `123456`。如果真实部署，请勿保留演示密码。
+> 注意：`seed_scenario_data.py` 的默认密码也是 `guangdong11`。如需只更新已有演示账号密码，可运行 `python scripts/reset_demo_passwords.py`。
+
+## 账号安全
+
+- 登录态用户可调用 `POST /api/auth/change-password` 修改本人密码，请求体为 `old_password` 与 `new_password`。
+- 后端保持 `bcrypt` 哈希存储，不落明文密码；新密码至少 8 位，需同时包含字母和数字，且不能使用 `123456`、纯数字或与学号相同的弱口令。

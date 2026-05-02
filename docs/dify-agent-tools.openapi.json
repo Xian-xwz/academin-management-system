@@ -1,0 +1,726 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Academic Management Dify Agent Tools",
+    "version": "2.1.0",
+    "description": "正式版 Dify Agent 工具接口。包含用户绑定、学业查询、论坛查询/写入、时间规划查询/写入。不要导入整站 API。"
+  },
+  "servers": [
+    {
+      "url": "https://academin-management-system.maplexian.cn",
+      "description": "Production HTTPS endpoint"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/api/openclaw/health": {
+      "get": {
+        "operationId": "health_check",
+        "summary": "检查工具服务可用性",
+        "description": "确认后端工具、数据库或配置是否可用。不会返回密钥。",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/me": {
+      "get": {
+        "operationId": "get_current_agent_user",
+        "summary": "查询当前绑定用户",
+        "description": "当用户问当前登录身份、当前绑定用户、我是谁时调用。返回当前 Agent 会话绑定的用户和权限范围。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/me/academic-info": {
+      "get": {
+        "operationId": "get_student_academic_info",
+        "summary": "查询当前学生学业详情",
+        "description": "查询当前绑定学生的基本信息、专业、年级、已修课程和学业详情。不要让用户手动指定其他学号。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/me/graduation-progress": {
+      "get": {
+        "operationId": "get_student_graduation_progress",
+        "summary": "查询当前学生毕业进度",
+        "description": "当用户询问能否毕业、还差多少学分、哪些类别未达标、毕业条件完成情况时优先调用。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/me/schedule": {
+      "get": {
+        "operationId": "get_student_schedule",
+        "summary": "查询当前学生课表",
+        "description": "查询当前绑定学生指定学期和周次的课表。term 必填，week 可选。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "name": "term",
+            "in": "query",
+            "required": true,
+            "description": "学期，例如 2024-2025-1。",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "教学周，1 到 30。未说明时填 1。",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 30,
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/me/time-plan/events": {
+      "get": {
+        "operationId": "get_student_time_plan_events",
+        "summary": "查询当前学生时间规划事件",
+        "description": "查询当前绑定学生的考试、作业、课程、个人待办等时间规划事件。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      },
+      "post": {
+        "operationId": "create_time_plan_event",
+        "summary": "创建当前学生时间规划事件",
+        "description": "当用户明确要求创建待办、考试、作业或个人安排时调用。必须先确认标题、类型、开始时间等必要信息。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimePlanEventCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/me/time-plan/events/{eventId}": {
+      "put": {
+        "operationId": "update_time_plan_event",
+        "summary": "更新当前学生时间规划事件",
+        "description": "当用户明确要求修改自己的某个时间规划事件时调用。不得删除事件。",
+        "parameters": [
+          {
+            "name": "eventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TimePlanEventUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/admin/students/{studentId}/academic-info": {
+      "get": {
+        "operationId": "admin_get_student_academic_info",
+        "summary": "管理员查询指定学生学业详情",
+        "description": "仅当前绑定用户为管理员/辅导员时调用。当管理员明确提供学号并要求查看该学生基本信息、专业、年级、已修课程或学业详情时使用。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "$ref": "#/components/parameters/TargetStudentId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/admin/students/{studentId}/graduation-progress": {
+      "get": {
+        "operationId": "admin_get_student_graduation_progress",
+        "summary": "管理员查询指定学生毕业进度",
+        "description": "仅当前绑定用户为管理员/辅导员时调用。当管理员明确提供学号并要求查看该学生毕业进度、学分缺口、毕业条件完成情况时使用。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "$ref": "#/components/parameters/TargetStudentId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/admin/students/{studentId}/schedule": {
+      "get": {
+        "operationId": "admin_get_student_schedule",
+        "summary": "管理员查询指定学生课表",
+        "description": "仅当前绑定用户为管理员/辅导员时调用。当管理员明确提供学号并要求查看该学生指定学期和周次课表时使用。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "$ref": "#/components/parameters/TargetStudentId"
+          },
+          {
+            "name": "term",
+            "in": "query",
+            "required": true,
+            "description": "学期，例如 2024-2025-1。",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "教学周，1 到 30。未说明时填 1。",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 30,
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/admin/students/{studentId}/time-plan/events": {
+      "get": {
+        "operationId": "admin_get_student_time_plan_events",
+        "summary": "管理员查询指定学生时间规划事件",
+        "description": "仅当前绑定用户为管理员/辅导员时调用。当管理员明确提供学号并要求查看该学生考试、作业、个人待办等时间规划事件时使用。该工具只读。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "$ref": "#/components/parameters/TargetStudentId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/forum/majors": {
+      "get": {
+        "operationId": "list_forum_majors",
+        "summary": "查询论坛专业列表",
+        "description": "当用户询问论坛可选专业、想按专业发帖或筛选帖子时调用。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/forum/topics": {
+      "get": {
+        "operationId": "list_forum_topics",
+        "summary": "查询论坛帖子列表",
+        "description": "查询论坛帖子列表，可按关键词、专业和排序方式过滤。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "description": "关键词，可搜索标题、正文或标签。",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "major",
+            "in": "query",
+            "required": false,
+            "description": "专业代码或专业名称。",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "description": "latest 或 hot。",
+            "schema": {
+              "type": "string",
+              "enum": ["latest", "hot"],
+              "default": "latest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      },
+      "post": {
+        "operationId": "create_forum_topic",
+        "summary": "发布论坛帖子",
+        "description": "当用户明确要求发布帖子时调用。以当前绑定用户作为作者。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForumTopicCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/forum/topics/{topicId}": {
+      "get": {
+        "operationId": "get_forum_topic",
+        "summary": "查询论坛帖子详情",
+        "description": "当用户询问某个帖子详情、评论或附件摘要时调用。",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AgentSessionToken"
+          },
+          {
+            "name": "topicId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      },
+      "put": {
+        "operationId": "update_forum_topic",
+        "summary": "编辑论坛帖子",
+        "description": "学生只能编辑自己发布的帖子，管理员可编辑所有帖子。用户明确要求编辑时才调用。",
+        "parameters": [
+          {
+            "name": "topicId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForumTopicUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/forum/topics/{topicId}/comments": {
+      "post": {
+        "operationId": "create_forum_comment",
+        "summary": "发表评论",
+        "description": "当用户明确要求回复某个论坛帖子时调用。以当前绑定用户作为作者。",
+        "parameters": [
+          {
+            "name": "topicId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForumCommentCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    },
+    "/api/agent-tools/admin/forum/topics/{topicId}": {
+      "patch": {
+        "operationId": "moderate_forum_topic",
+        "summary": "管理员治理论坛帖子",
+        "description": "仅当前绑定用户为管理员时可调用。用于隐藏或恢复论坛帖子。",
+        "parameters": [
+          {
+            "name": "topicId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForumModerateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ApiResponse"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Dify 工具服务令牌。使用 Authorization: Bearer <AGENT_TOOL_TOKEN>。"
+      }
+    },
+    "parameters": {
+      "AgentSessionToken": {
+        "name": "agentSessionToken",
+        "in": "query",
+        "required": true,
+        "description": "后端签发的短期 Agent 会话令牌，用于绑定当前登录用户权限。",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "TargetStudentId": {
+        "name": "studentId",
+        "in": "path",
+        "required": true,
+        "description": "目标学生学号，仅管理员/辅导员绑定身份可指定。",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "schemas": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {}
+        }
+      },
+      "ForumTopicCreate": {
+        "type": "object",
+        "required": ["agentSessionToken", "title", "content"],
+        "properties": {
+          "agentSessionToken": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "description": "帖子标题"
+          },
+          "content": {
+            "type": "string",
+            "description": "帖子正文"
+          },
+          "major": {
+            "type": "string",
+            "nullable": true,
+            "description": "专业代码或专业名称"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ForumTopicUpdate": {
+        "type": "object",
+        "required": ["agentSessionToken"],
+        "properties": {
+          "agentSessionToken": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          },
+          "major": {
+            "type": "string",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ForumCommentCreate": {
+        "type": "object",
+        "required": ["agentSessionToken", "content"],
+        "properties": {
+          "agentSessionToken": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string",
+            "description": "评论内容"
+          },
+          "parent_id": {
+            "type": "integer",
+            "nullable": true,
+            "description": "回复的父评论 ID，可为空"
+          }
+        }
+      },
+      "ForumModerateRequest": {
+        "type": "object",
+        "required": ["agentSessionToken", "status"],
+        "properties": {
+          "agentSessionToken": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["normal", "deleted"],
+            "description": "normal 表示恢复显示，deleted 表示隐藏/软删除"
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "TimePlanEventCreate": {
+        "type": "object",
+        "required": ["agentSessionToken", "title", "type", "startTime"],
+        "properties": {
+          "agentSessionToken": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "description": "事件类型，例如 课程/考试/作业/个人"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "desc": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "default": "待开始"
+          }
+        }
+      },
+      "TimePlanEventUpdate": {
+        "type": "object",
+        "required": ["agentSessionToken"],
+        "properties": {
+          "agentSessionToken": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "desc": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    },
+    "responses": {
+      "ApiResponse": {
+        "description": "统一响应结构 {code,message,data}",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ApiResponse"
+            }
+          }
+        }
+      }
+    }
+  }
+}

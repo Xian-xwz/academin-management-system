@@ -19,6 +19,7 @@ DEMO_USERS = [
     ("2021000002", "计科演示学生", "080901", "2021级"),
     ("2021000003", "软工演示学生", "080902", "2021级"),
 ]
+DEFAULT_PASSWORD = "guangdong11"
 
 
 async def _get_major(session, major_code: str) -> Major:
@@ -31,7 +32,7 @@ async def _get_major(session, major_code: str) -> Major:
 
 async def seed_users(session) -> list[User]:
     users: list[User] = []
-    password_hash = hash_password("123456")
+    password_hash = hash_password(DEFAULT_PASSWORD)
     for student_id, real_name, major_code, grade in DEMO_USERS:
         major = await _get_major(session, major_code)
         result = await session.execute(select(User).where(User.student_id == student_id))
@@ -211,7 +212,7 @@ async def main() -> None:
     print(f"schedules_inserted={schedule_count}")
     print(f"time_plan_events_inserted={time_plan_count}")
     print(f"forum_topics_inserted={forum_count}")
-    print("demo_password=123456")
+    print(f"demo_password={DEFAULT_PASSWORD}")
 
 
 if __name__ == "__main__":

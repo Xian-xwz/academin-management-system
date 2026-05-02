@@ -28,6 +28,13 @@ class OpenClawClient:
     name: str = "openclaw"
 
 
+@dataclass(frozen=True)
+class AgentToolClient:
+    """Dify Agent 受控工具调用方身份。"""
+
+    name: str = "dify-agent"
+
+
 def hash_password(password: str) -> str:
     return password_context.hash(password)
 
@@ -40,6 +47,30 @@ def create_access_token(subject: str) -> str:
     expires_at = datetime.now(timezone.utc) + timedelta(minutes=settings.access_token_expire_minutes)
     payload = {"sub": subject, "exp": expires_at}
     return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm)
+
+
+def create_agent_session_token(user: User) -> tuple[str, datetime]:
+    """签发短期 Agent 会话令牌，用于把公共 Bot 工具调用绑定到当前登录用户。"""
+
+    expires_at = datetime.now(timezone.utc) + timedelta(minutes=settings.agent_session_expire_minutes)
+    payload = {
+        "typ": "agent_session",
+        "sub": str(user.id),
+        "student_id": user.student_id,
+        "role": user.role,
+        "exp": expires_at,
+    }
+    return jwt.encode(payload, settings.jwt_secret_key, algorithm=settings.jwt_algorithm), expires_at
+
+
+def decode_agent_session_token(token: str) -> dict:
+    try:
+        payload = jwt.decode(token, settings.jwt_secret_key, algorithms=[settings.jwt_algorithm])
+    except JWTError:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Agent 会话令牌无效或已过期") from None
+    if payload.get("typ") != "agent_session":
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Agent 会话令牌类型无效")
+    return payload
 
 
 async def get_current_user(
@@ -82,3 +113,15 @@ async def require_openclaw_client(
     if not compare_digest(credentials.credentials, settings.openclaw_tool_token):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="OpenClaw 工具令牌无效")
     return OpenClawClient()
+
+
+async def require_agent_tool_client(
+    credentials: HTTPAuthorizationCredentials | None = Depends(bearer_scheme),
+) -> AgentToolClient:
+    if not settings.agent_tool_token:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail="Agent 工具令牌未配置")
+    if credentials is None or credentials.scheme.lower() != "bearer":
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="缺少 Agent 工具令牌")
+    if not compare_digest(credentials.credentials, settings.agent_tool_token):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Agent 工具令牌无效")
+    return AgentToolClient()

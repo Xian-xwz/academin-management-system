@@ -88,10 +88,16 @@ class Settings:
     dify_app_api_key: str | None
     dify_app_api_id: str | None
     dify_timeout_seconds: float
+    knowledge_card_dify_api_base: str
+    knowledge_card_dify_api_key: str | None
+    knowledge_card_dify_workflow_id: str | None
+    knowledge_card_timeout_seconds: float
     upload_dir: Path
     max_upload_size_mb: int
     openclaw_tool_token: str | None
     openclaw_allowed_student_ids: set[str]
+    agent_tool_token: str | None
+    agent_session_expire_minutes: int
     mock_dynamic_enabled: bool
     mock_dynamic_use_llm: bool
     dashscope_api_key: str | None
@@ -128,13 +134,30 @@ def load_settings() -> Settings:
         jwt_algorithm=_get_config_value(file_values, "JWT_ALGORITHM", "HS256") or "HS256",
         access_token_expire_minutes=int(_get_config_value(file_values, "ACCESS_TOKEN_EXPIRE_MINUTES", "1440") or "1440"),
         dify_app_api_base=(_get_config_value(file_values, "DIFY_APP_API_BASE", "https://api.dify.ai/v1") or "https://api.dify.ai/v1").rstrip("/"),
-        dify_app_api_key=_get_config_value(file_values, "DIFY_APP_API_KEY"),
-        dify_app_api_id=_get_config_value(file_values, "DIFY_APP_API_ID"),
+        dify_app_api_key=(
+            _get_config_value(file_values, "DIFY_AGENT_TOKEN")
+            or _get_config_value(file_values, "dify_agent_token")
+            or _get_config_value(file_values, "DIFY_APP_API_KEY")
+        ),
+        dify_app_api_id=(
+            _get_config_value(file_values, "DIFY_AGENT_ID")
+            or _get_config_value(file_values, "dify_agent_id")
+            or _get_config_value(file_values, "DIFY_APP_API_ID")
+        ),
         dify_timeout_seconds=float(_get_config_value(file_values, "DIFY_TIMEOUT_SECONDS", "60") or "60"),
+        knowledge_card_dify_api_base=(
+            _get_config_value(file_values, "DIFY_KNOWLEDGE_CARD_API_BASE", _get_config_value(file_values, "DIFY_APP_API_BASE", "https://api.dify.ai/v1"))
+            or "https://api.dify.ai/v1"
+        ).rstrip("/"),
+        knowledge_card_dify_api_key=_get_config_value(file_values, "DIFY_KNOWLEDGE_CARD_API_KEY"),
+        knowledge_card_dify_workflow_id=_get_config_value(file_values, "DIFY_KNOWLEDGE_CARD_WORKFLOW_ID"),
+        knowledge_card_timeout_seconds=float(_get_config_value(file_values, "DIFY_KNOWLEDGE_CARD_TIMEOUT_SECONDS", "180") or "180"),
         upload_dir=Path(_get_config_value(file_values, "UPLOAD_DIR", str(BACKEND_ROOT / "storage")) or str(BACKEND_ROOT / "storage")),
         max_upload_size_mb=int(_get_config_value(file_values, "MAX_UPLOAD_SIZE_MB", "50") or "50"),
         openclaw_tool_token=_get_config_value(file_values, "OPENCLAW_TOOL_TOKEN"),
         openclaw_allowed_student_ids=openclaw_allowed_student_ids,
+        agent_tool_token=_get_config_value(file_values, "AGENT_TOOL_TOKEN") or _get_config_value(file_values, "OPENCLAW_TOOL_TOKEN"),
+        agent_session_expire_minutes=int(_get_config_value(file_values, "AGENT_SESSION_EXPIRE_MINUTES", "120") or "120"),
         mock_dynamic_enabled=(_get_config_value(file_values, "MOCK_DYNAMIC_ENABLED", "true") or "true").lower() in {"1", "true", "yes", "on"},
         mock_dynamic_use_llm=mock_dynamic_use_llm_raw in {"1", "true", "yes", "on"},
         dashscope_api_key=_get_config_value(file_values, "DASHSCOPE_API_KEY"),

@@ -65,7 +65,7 @@
               </el-form>
               
               <div class="pt-4 border-t border-gray-100">
-                <el-button type="primary" plain>修改密码</el-button>
+                <el-button type="primary" plain @click="passwordDialogVisible = true">修改密码</el-button>
               </div>
             </div>
           </el-tab-pane>
@@ -93,20 +93,48 @@
         </el-tabs>
       </div>
     </div>
+
+    <el-dialog v-model="passwordDialogVisible" title="修改密码" width="420px" destroy-on-close @closed="resetPasswordForm">
+      <el-form ref="passwordFormRef" :model="passwordForm" :rules="passwordRules" label-position="top">
+        <el-form-item label="原密码" prop="oldPassword">
+          <el-input v-model="passwordForm.oldPassword" type="password" show-password autocomplete="current-password" />
+        </el-form-item>
+        <el-form-item label="新密码" prop="newPassword">
+          <el-input v-model="passwordForm.newPassword" type="password" show-password autocomplete="new-password" />
+          <div class="mt-1 text-xs text-gray-400">至少 8 位，需同时包含字母和数字；不要使用 123456 或学号。</div>
+        </el-form-item>
+        <el-form-item label="确认新密码" prop="confirmPassword">
+          <el-input v-model="passwordForm.confirmPassword" type="password" show-password autocomplete="new-password" />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button :disabled="passwordSubmitting" @click="passwordDialogVisible = false">取消</el-button>
+        <el-button type="primary" :loading="passwordSubmitting" @click="submitPasswordChange">确认修改</el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted } from 'vue';
+import { computed, reactive, ref, onMounted } from 'vue';
 import { useUserStore } from '@/stores/user';
 import { Camera, Setting, Trophy, Check } from '@element-plus/icons-vue';
 import { ElMessage } from 'element-plus';
-import { uploadAvatar } from '@/api/modules/auth';
+import type { FormInstance, FormRules } from 'element-plus';
+import { changePassword, uploadAvatar } from '@/api/modules/auth';
 
 const userStore = useUserStore();
 const activeTab = ref('profile');
 const avatarInputRef = ref<HTMLInputElement | null>(null);
 const avatarUploading = ref(false);
+const passwordDialogVisible = ref(false);
+const passwordSubmitting = ref(false);
+const passwordFormRef = ref<FormInstance>();
+const passwordForm = reactive({
+  oldPassword: '',
+  newPassword: '',
+  confirmPassword: ''
+});
 
 const avatarUrl = computed(() => userStore.userInfo?.avatarUrl || '');
 
@@ -130,6 +158,36 @@ const themeColors = [
 ];
 
 const currentColor = ref('#409EFF');
+
+const passwordRules: FormRules = {
+  oldPassword: [{ required: true, message: '请输入原密码', trigger: 'blur' }],
+  newPassword: [
+    { required: true, message: '请输入新密码', trigger: 'blur' },
+    { min: 8, message: '新密码至少需要 8 位', trigger: 'blur' },
+    {
+      validator: (_rule, value, callback) => {
+        if (!value) return callback();
+        if (value.trim() !== value) return callback(new Error('密码首尾不能包含空格'));
+        if (value === '123456') return callback(new Error('不能使用 123456 作为密码'));
+        if (value === userStore.userInfo?.studentId) return callback(new Error('密码不能与学号相同'));
+        if (/^\d+$/.test(value)) return callback(new Error('密码不能是纯数字'));
+        if (!/[A-Za-z]/.test(value) || !/\d/.test(value)) return callback(new Error('密码需同时包含字母和数字'));
+        callback();
+      },
+      trigger: 'blur'
+    }
+  ],
+  confirmPassword: [
+    { required: true, message: '请再次输入新密码', trigger: 'blur' },
+    {
+      validator: (_rule, value, callback) => {
+        if (value !== passwordForm.newPassword) return callback(new Error('两次输入的新密码不一致'));
+        callback();
+      },
+      trigger: 'blur'
+    }
+  ]
+};
 
 const openAvatarPicker = () => {
   if (avatarUploading.value) return;
@@ -155,6 +213,34 @@ const handleAvatarChange = async (event: Event) => {
     ElMessage.error(error.message || '头像上传失败');
   } finally {
     avatarUploading.value = false;
+  }
+};
+
+const resetPasswordForm = () => {
+  passwordForm.oldPassword = '';
+  passwordForm.newPassword = '';
+  passwordForm.confirmPassword = '';
+  passwordFormRef.value?.clearValidate();
+};
+
+const submitPasswordChange = async () => {
+  if (!passwordFormRef.value) return;
+  const valid = await passwordFormRef.value.validate().catch(() => false);
+  if (!valid) return;
+
+  passwordSubmitting.value = true;
+  try {
+    await changePassword({
+      oldPassword: passwordForm.oldPassword,
+      newPassword: passwordForm.newPassword
+    });
+    ElMessage.success('密码修改成功，请使用新密码登录');
+    passwordDialogVisible.value = false;
+    resetPasswordForm();
+  } catch (error: any) {
+    ElMessage.error(error?.response?.data?.message || error.message || '密码修改失败');
+  } finally {
+    passwordSubmitting.value = false;
   }
 };
 

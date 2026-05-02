@@ -35,3 +35,11 @@ export const uploadAvatar = async (file: File) => {
   });
   return unwrapResponse(res);
 };
+
+export const changePassword = async (data: { oldPassword: string; newPassword: string }) => {
+  const res = await request.post('/auth/change-password', {
+    old_password: data.oldPassword,
+    new_password: data.newPassword
+  });
+  return unwrapResponse(res);
+};

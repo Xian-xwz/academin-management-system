@@ -12,8 +12,10 @@
 ## 2. 后端与环境变量（名称级）
 
 - **接口清单与路径**：`backend/README.md`（`/api/ai/chat`、`/api/ai/chat/stream`、附件上传等）。
+- **Dify Agent 工具 Schema 公网地址**：`https://academin-management-system.maplexian.cn/dify-agent-tools.openapi.json`。该地址应返回 `application/json`，当前版本为 `2.1.0`，包含 `admin_get_student_*` 管理员/辅导员目标学生查询工具。若 Dify 控制台仍拒绝按学号查询，请重新导入该 schema 并同步 `docs/dify/agent_prompt.md`。
+- **Dify Agent 系统提示词**：`docs/dify/agent_prompt.md`。管理员/辅导员按目标学号查询的规则必须与 OpenAPI schema 同步。
 - **常见变量名**（以仓库 `.env` / `backend` 读取为准，具体说明见技术文档）：
-  - `DIFY_APP_API_BASE`、`DIFY_APP_API_KEY`、`DIFY_APP_API_ID`：Chatflow 调用（流式/非流式）。
+  - `DIFY_APP_API_BASE`、`DIFY_APP_API_KEY`、`DIFY_APP_API_ID`：Chatflow / Agent 调用（流式/非流式）；若使用正式版 Agent，可配置 `DIFY_AGENT_TOKEN` / `dify_agent_token` 与 `DIFY_AGENT_ID` / `dify_agent_id`，后端优先读取 Agent 专用变量。
   - `DIFY_KNOWLEDGE_API_BASE`、`DIFY_DATASET_API_KEY`、`DIFY_DATASET_ID`：Knowledge API 批量上传（与控制台/自托管实例基址对齐方式见 mineru 计划「自托管 Dify」一节）。
   - 上传并发、轮询等：如 `DIFY_UPLOAD_CONCURRENCY`（见 `scripts/dify_upload/` 下脚本说明）。
 

@@ -17,8 +17,8 @@ from app.models import User
 
 
 ADMIN_USERNAME = "admin001"
-ADMIN_PASSWORD = "123456"
-STUDENT_PASSWORD = "123456"
+ADMIN_PASSWORD = "guangdong11"
+STUDENT_PASSWORD = "guangdong11"
 PREFERRED_STUDENT_ID = "202211911001"
 
 
@@ -152,7 +152,7 @@ def main() -> None:
             restore_topic.raise_for_status()
             assert restore_topic.json()["data"]["status"] == "normal"
         else:
-            print("student_forbidden_check=skipped, target student password is not the default 123456")
+            print("student_forbidden_check=skipped, target student password is not the default guangdong11")
     finally:
         client.__exit__(None, None, None)
         asyncio.run(async_engine.dispose())

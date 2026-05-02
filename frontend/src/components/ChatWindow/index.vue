@@ -217,10 +217,14 @@ const getIntentLabel = (intent: string) => {
 };
 
 const initializeGreeting = () => {
+  const isAdmin = userStore.userInfo?.role === 'admin';
+  const greeting = isAdmin
+    ? '你好！我是学业问询助手。当前你处于辅导员/教务视角，我可以协助你：\n\n1. 按学号查询学生毕业进度\n2. 查看学生学业详情、课表和时间规划\n3. 解释培养方案、毕业要求和课程体系\n\n查询具体学生时，请直接提供目标学号。'
+    : '你好！我是你的专属 AI 学习助手。基于内置知识库和你的学业数据，我可以为你解答：\n\n1. 毕业学分要求\n2. 你的剩余差距与修读进度\n3. 选课建议、课表和时间规划\n\n请问有什么我可以帮你的？';
   messages.value.push({ 
     id: generateId(),
     role: 'assistant', 
-    content: '你好！我是你的专属 AI 学习助手。基于内置的知识库（培养方案等），我可以为你解答：\n\n1. 毕业学分要求\n2. 剩余差距与修读进度\n3. 选课建议等\n\n请问有什么我可以帮你的？',
+    content: greeting,
     createdAt: formatTime()
   });
 };
@@ -303,12 +307,15 @@ const handleSend = async () => {
     currentStatus: ''
   };
   messages.value.push(assistantMessage);
+  const assistantIndex = messages.value.length - 1;
+  const getAssistantMessage = () => messages.value[assistantIndex];
   const addStatusStep = (message: string) => {
+    const target = getAssistantMessage();
     currentStreamStatus.value = message;
-    assistantMessage.currentStatus = message;
-    if (!assistantMessage.statusSteps) assistantMessage.statusSteps = [];
-    if (assistantMessage.statusSteps[assistantMessage.statusSteps.length - 1] !== message) {
-      assistantMessage.statusSteps.push(message);
+    target.currentStatus = message;
+    if (!target.statusSteps) target.statusSteps = [];
+    if (target.statusSteps[target.statusSteps.length - 1] !== message) {
+      target.statusSteps.push(message);
     }
   };
   scrollToBottom();
@@ -362,7 +369,7 @@ const handleSend = async () => {
         if (streamBuffer) {
           const chunk = streamBuffer.slice(0, 2);
           streamBuffer = streamBuffer.slice(2);
-          assistantMessage.content += chunk;
+          getAssistantMessage().content += chunk;
           scrollToBottom();
           return;
         }
@@ -381,16 +388,17 @@ const handleSend = async () => {
       },
       onReplace: (answer) => {
         streamBuffer = '';
-        assistantMessage.content = answer;
+        getAssistantMessage().content = answer;
         scrollToBottom();
       },
       onStatus: (message) => {
         if (!message) return;
+        const target = getAssistantMessage();
         currentStreamStatus.value = message;
-        assistantMessage.currentStatus = message;
-        if (!assistantMessage.statusSteps) assistantMessage.statusSteps = [];
-        if (assistantMessage.statusSteps[assistantMessage.statusSteps.length - 1] !== message) {
-          assistantMessage.statusSteps.push(message);
+        target.currentStatus = message;
+        if (!target.statusSteps) target.statusSteps = [];
+        if (target.statusSteps[target.statusSteps.length - 1] !== message) {
+          target.statusSteps.push(message);
         }
         scrollToBottom();
       },
@@ -399,18 +407,19 @@ const handleSend = async () => {
           aiChatStore.setConversationId(res.conversation_id);
         }
         void aiChatStore.loadHistorySessions();
-        assistantMessage.sources = res.sources;
-        assistantMessage.intent = res.intent;
+        const target = getAssistantMessage();
+        target.sources = res.sources;
+        target.intent = res.intent;
         streamEnded = true;
-        if (!assistantMessage.content.trim() && !streamBuffer.trim()) {
-          assistantMessage.content = '已收到回复，但内容为空。';
+        if (!target.content.trim() && !streamBuffer.trim()) {
+          target.content = '已收到回复，但内容为空。';
         }
         finishTypingIfDone();
       },
       onError: (message) => {
         streamBuffer = '';
         streamEnded = true;
-        assistantMessage.content = message;
+        getAssistantMessage().content = message;
         currentStreamStatus.value = '响应异常';
         finishTypingIfDone();
       }

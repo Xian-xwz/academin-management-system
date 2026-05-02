@@ -24,6 +24,7 @@ const router = createRouter({
         { path: 'forum/topics/create', component: () => import('@/views/Forum/CreateTopic/index.vue') },
         { path: 'forum/topics/:id/edit', component: () => import('@/views/Forum/CreateTopic/index.vue') },
         { path: 'forum/topics/:id', component: () => import('@/views/Forum/TopicDetail/index.vue') },
+        { path: 'knowledge-cards', component: () => import('@/views/KnowledgeCards/index.vue') },
         { path: 'schedule', component: () => import('@/views/Schedule/index.vue') },
         { path: 'time-plan', component: () => import('@/views/TimePlan/index.vue') },
         { path: 'profile', component: () => import('@/views/Profile/index.vue') },
