@@ -85,41 +85,6 @@ class DashboardService:
             topic.like_count += 1
 
     async def _generate_ai_history_hint(self, db: AsyncSession, current_user: User) -> None:
-        topic_result = await db.execute(
-            select(ForumTopic)
-            .where(ForumTopic.user_id == current_user.id, ForumTopic.status == "normal")
-            .order_by(ForumTopic.updated_at.desc())
-            .limit(2)
-        )
-        own_topics = list(topic_result.scalars().all())
-
-        actor_result = await db.execute(
-            select(User)
-            .where(User.id != current_user.id, User.is_active.is_(True))
-            .order_by(User.updated_at.desc())
-            .limit(6)
-        )
-        actors = list(actor_result.scalars().all())
-        actor = choice(actors) if actors else None
-
-        comment_templates = [
-            "我也在看这部分内容，感觉这个资料对复习挺有帮助。",
-            "这个问题我之前也遇到过，可以结合培养方案里的课程模块一起看。",
-            "感谢分享，后面如果整理出答案我也会补充到评论区。",
-        ]
-        for topic in own_topics:
-            topic.view_count += 1
-            if actor is not None:
-                content = f"{choice(comment_templates)}（模拟互动 {datetime.now().strftime('%H:%M:%S')}）"
-                db.add(ForumComment(topic_id=topic.id, user_id=actor.id, content=content))
-                topic.comment_count += 1
-                like_result = await db.execute(
-                    select(ForumTopicLike).where(ForumTopicLike.topic_id == topic.id, ForumTopicLike.user_id == actor.id)
-                )
-                if like_result.scalar_one_or_none() is None:
-                    db.add(ForumTopicLike(topic_id=topic.id, user_id=actor.id))
-                    topic.like_count += 1
-
         if current_user.student_id == "202211911001":
             title = f"AI 问询：登录模拟提醒 {datetime.now().strftime('%H:%M')}"
             conversation = AIConversation(
