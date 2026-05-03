@@ -5,7 +5,7 @@
 ## 分册
 
 - [2026-04.md](2026-04.md)：MinerU 知识库流水线落地与解析修复；Dify 云端上传限流与订阅上限处理；自托管 Dify + Caddy 子域名部署、知识库限制、长任务超时调整与 nginx 上游缓存 502 恢复备忘；毕设论坛/AI 流式等应用侧记录（个人 CLI 工具链配置已迁出至全局 Skill，见仓库内 HTML 注释）。
-- [2026-05.md](2026-05.md)：OpenClaw 网关升级、图片模型、飞书内置长连接、AGENTS/TOOLS 约束、受控 `/api/openclaw`、部署与 mock 动态器；微信侧稳定性收尾；主链路转向 Dify Agent、精简 OpenAPI 工具 schema；**Dify Agent 第一阶段**联调验收；第二阶段课表补全、正式版公共 Bot 权限隔离和论坛/事件写权限扩展落地；正式版 Dify Agent 应用接入与流式工具路径展示；管理员目标学生查询工具补全；知识卡片规划与落地。
+- [2026-05.md](2026-05.md)：OpenClaw 网关升级、图片模型、飞书内置长连接、AGENTS/TOOLS 约束、受控 `/api/openclaw`、部署与 mock 动态器；微信侧稳定性收尾；主链路转向 Dify Agent、精简 OpenAPI 工具 schema；**Dify Agent 第一阶段**联调验收；第二阶段课表补全、正式版公共 Bot 权限隔离和论坛/事件写权限扩展落地；正式版 Dify Agent 应用接入与流式工具路径展示；管理员目标学生查询工具补全；Dify 控制台 `2.1.0` schema 与提示词同步已关闭；知识卡片规划与落地。
 
 ## 与 plan 区别
 
