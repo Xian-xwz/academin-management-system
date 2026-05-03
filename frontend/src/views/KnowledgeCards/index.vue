@@ -53,6 +53,8 @@
               <img
                 v-if="cardImageUrls[card.id]"
                 :src="cardImageUrls[card.id]"
+                loading="lazy"
+                decoding="async"
                 class="h-full w-full object-cover"
                 :alt="card.title || '知识卡片'"
               />
@@ -246,6 +248,7 @@ const detailImageUrl = ref('');
 const fileList = ref<UploadUserFile[]>([]);
 const selectedImage = ref<File | null>(null);
 const cardImageUrls = reactive<Record<number, string>>({});
+let imageLoadVersion = 0;
 
 const createForm = reactive({
   inputText: '',
@@ -275,6 +278,7 @@ const revokeDetailImageUrl = () => {
 
 const loadCards = async (targetPage = page.value) => {
   loading.value = true;
+  const currentVersion = ++imageLoadVersion;
   try {
     page.value = targetPage;
     const data = await getKnowledgeCards({
@@ -285,21 +289,36 @@ const loadCards = async (targetPage = page.value) => {
     });
     cards.value = data.items;
     total.value = data.total;
-    await loadCardImages(data.items);
+    void loadCardImages(data.items, currentVersion);
   } finally {
     loading.value = false;
   }
 };
 
-const loadCardImages = async (items: KnowledgeCardItem[]) => {
-  for (const card of items) {
-    if (!card.outputImageUrl || cardImageUrls[card.id]) continue;
-    try {
-      cardImageUrls[card.id] = await loadKnowledgeCardImage(card.outputImageUrl);
-    } catch {
-      // 图片加载失败不阻断画廊列表。
+const loadCardImages = async (items: KnowledgeCardItem[], version = imageLoadVersion) => {
+  const targets = items.filter(card => card.outputImageUrl && !cardImageUrls[card.id]);
+  const concurrency = 4;
+  let cursor = 0;
+
+  const worker = async () => {
+    while (cursor < targets.length) {
+      const card = targets[cursor++];
+      if (version !== imageLoadVersion) return;
+      if (!card.outputImageUrl || cardImageUrls[card.id]) continue;
+      try {
+        const imageUrl = await loadKnowledgeCardImage(card.outputImageUrl);
+        if (version === imageLoadVersion) {
+          cardImageUrls[card.id] = imageUrl;
+        } else {
+          URL.revokeObjectURL(imageUrl);
+        }
+      } catch {
+        // 图片加载失败不阻断画廊列表。
+      }
     }
-  }
+  };
+
+  await Promise.all(Array.from({ length: Math.min(concurrency, targets.length) }, worker));
 };
 
 const openCreateDrawer = () => {
