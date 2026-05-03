@@ -1,0 +1,50 @@
+---
+description: >-
+  毕设公网环境：本地 Git 提交推送、SSH 拉取远端、前端构建与静态发布、后端重启与验收；避免仅靠对话记忆遗漏步骤。
+alwaysApply: false
+---
+
+# 云端与 Git 同步（毕设）
+
+## 环境与路径（与根 `README.md`、`logs/开发日志/` 一致）
+
+- **公网站点**：`https://academin-management-system.maplexian.cn`
+- **服务器仓库根**：`/opt/academin-management-system/app`
+- **后端服务**：`academic-backend.service`，监听 `127.0.0.1:8081`
+- **Caddy 静态前端目录**：`/var/www/academin-management-system`
+- **SSH 主机别名**：开发机已配置则使用 `ssh myserver`。**自动化脚本务必加**：`ssh -o BatchMode=yes -o ConnectTimeout=15`，避免卡住等待交互输入。
+
+## 本地（Windows / PowerShell）
+
+1. **`git status`**：确认只暂存本轮应入库的文件；勿将 `.env`、`node_modules`、`backend/storage`、大体积未整理资料误 `git add -A`。
+2. **`git commit`**：建议使用英文摘要，或通过 Git Bash 提交中文说明，减轻 PowerShell 编码问题。
+3. **`git push origin main`**：推送完成后，再在服务器上对同一分支对齐。
+
+前端改动发布前的本地自检（按需）：在 `frontend` 目录执行 `npm run lint`、`npm run build`。
+
+## 服务器（Ubuntu，推荐：**拉仓库 + 在服务器构建前端**）
+
+1. `cd /opt/academin-management-system/app`
+2. **对齐远端**（遇本地脏工作区、`pull` 失败时沿用开发日志写法）：
+   - `git fetch origin`
+   - `git reset --hard origin/main`
+   - `git clean -fd -e .env`  
+     **必须保留 `-e .env`**，以免删除服务器环境与密钥。
+3. **后端有变更**：先执行需要的迁移脚本等，再 `sudo systemctl restart academic-backend`
+4. **前端发布（常用）**：
+   - `cd /opt/academin-management-system/app/frontend`
+   - `npm run build`
+   - `sudo rsync -a --delete dist/ /var/www/academin-management-system/`
+
+Windows 直接向服务器传整目录 **`scp`** 时，通配与子目录在 PowerShell 下容易挂起或无输出；优先采用 **服务端 `git` + `npm run build`**，与既有开发日志一致。
+
+## 验收
+
+- 服务器：`curl -sf http://127.0.0.1:8081/api/health`
+- 浏览器访问公网站点受影响页面（部署后如遇旧 chunk，强刷或使用无痕；历史问题见日志 **前端静态资源旧缓存 - 023**）。
+- 若更新了 **`docs/dify-agent-tools.openapi.json`** 或 **`docs/dify/agent_prompt.md`**：**仅部署后端/静态还不够**，须在 Dify 控制台重新导入 schema 或同步提示词（开发日志多条已记录）。
+
+## 同步后文档
+
+部署与验证完成后，更新 `logs/开发日志/` 当月分册中对应条目的 **验证结果**；新增问题时按序号追加条目。
+
